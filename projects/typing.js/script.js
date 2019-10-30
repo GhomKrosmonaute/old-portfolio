@@ -15,14 +15,14 @@ document.addEventListener( 'DOMContentLoaded', async (event) => {
     await typing.sleep(500)
 
     // The write method auto-escape HTML tags.
-    await typing.write('<span class="name">Typing.js</span> is simple to use, and...')
+    await typing.write('<span class="pink"> Typing.js </span> is simple to use, and...')
 
     // Break again and pitch again...
     await typing.sleep(500)
-    await typing.write('<span class="name"> Typing.js </span> is simple to edit 😉')
+    await typing.write('<span class="pink"> Typing.js </span> is simple to edit 😉')
     await typing.sleep(1000)
-    await typing.write('<span class="name"> Typing.js </span> use Promises and he is completely independent.')
+    await typing.write('<span class="pink"> Typing.js </span> use Promises and he is completely independent.')
     await typing.sleep(500)
-    await typing.write('Thank for using <span class="name"> Typing.js </span> !')
+    await typing.write('Thank for using <span class="pink"> Typing.js </span> !')
 
 })
