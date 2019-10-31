@@ -7,6 +7,19 @@ document.addEventListener( 'DOMContentLoaded', async (event) => {
         id : 'typing'   // #id of output HTMLElement
     })
 
+    const creator = new Typing({
+        id : 'creator',
+        time : 120
+    })
+
+    const download = new Typing({
+        id : 'download',
+        time : 100
+    })
+
+    creator.write('Creator : <a href="../../index.html">Ghom</a>')
+    download.write('Download / CDN : <a href="./typing/typing.js">typing.js</a>')
+
     // Pitch.
     await typing.write('Hello everyone')
     await typing.write('Hello World !')
