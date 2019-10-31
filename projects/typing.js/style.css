@@ -41,3 +41,14 @@ header {
 .pink {
     color: #d88;
 }
+
+button {
+    display: none;
+}
+input[type="text"] {
+    background-color: #444;
+    color: #d88;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
