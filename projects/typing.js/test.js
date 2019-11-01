@@ -11,8 +11,12 @@ document.addEventListener( 'DOMContentLoaded', async (event) => {
 
     await typing.write('Try to typing !')
 
-    document.getElementById('try').onclick = function(){
-        typing.write(document.getElementById("input").value)
-    }
-
+    document.getElementById('input').addEventListener("keydown", event => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        if(event.keyCode === 13){
+            typing.write(document.getElementById("input").value)
+        }
+    })
 })

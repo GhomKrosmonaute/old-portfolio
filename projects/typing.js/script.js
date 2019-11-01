@@ -20,22 +20,31 @@ document.addEventListener( 'DOMContentLoaded', async (event) => {
     creator.write('Creator : <a href="../../index.html">Ghom</a>')
     download.write('Download / CDN : <a href="./typing/typing.js">typing.js</a>')
 
+    let id = 1
+
+    async function action(name,value){
+        document.getElementById('a'+id).className = 'current'
+        await typing[name](value)
+        document.getElementById('a'+id).className = ''
+        id ++
+    }
+
     // Pitch.
-    await typing.write('Hello everyone')
-    await typing.write('Hello World !')
+    await action('write','Hello everyone')
+    await action('write','Hello World !')
 
     // Break Xms.
-    await typing.sleep(500)
+    await action('sleep',500)
 
     // The write method auto-escape HTML tags.
-    await typing.write('<span class="pink"> Typing.js </span> is simple to use, and...')
+    await action('write','<span class="pink"> Typing.js </span> is simple to use, and...')
 
     // Break again and pitch again...
-    await typing.sleep(500)
-    await typing.write('<span class="pink"> Typing.js </span> is simple to edit 😉')
-    await typing.sleep(1000)
-    await typing.write('<span class="pink"> Typing.js </span> use Promises and he is completely independent.')
-    await typing.sleep(500)
-    await typing.write('Thank for using <span class="pink"> Typing.js </span> !')
+    await action('sleep',500)
+    await action('write','<span class="pink"> Typing.js </span> is simple to edit 😉')
+    await action('sleep',1000)
+    await action('write','<span class="pink"> Typing.js </span> use Promises and he is completely independent.')
+    await action('sleep',500)
+    await action('write','Thank for using <span class="pink"> Typing.js </span> !')
 
 })
