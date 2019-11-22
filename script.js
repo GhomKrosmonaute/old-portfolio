@@ -37,8 +37,8 @@ $( () => {
         anime({
             targets : 'p.' + classe,
             top : (animation.top + 2) + 'vh',
-            easing : 'easeInOutBack',
-            delay : delay + 100
+            easing : 'easeOutBack',
+            delay : delay + 200
         })
     }
 
@@ -46,12 +46,13 @@ $( () => {
 
     anime({
         targets : 'div.header',
-        top : '-90vh'
+        top : '-90vh',
+        delay : 50
     })
     anime({
         targets : 'p.header',
         top : '3vh',
-        delay : 50
+        delay : 100
     })
 
     // INFOS
@@ -69,6 +70,20 @@ $( () => {
         anime({
             targets : 'p.infos',
             left : '60vw',
+            delay : 100
+        })
+    },1500)
+
+    // CONTACT
+
+    setTimeout(()=>{
+        anime({
+            targets : 'div.contact',
+            left : '40vw'
+        })
+        anime({
+            targets : 'p.contact',
+            left : '42.5vw',
             delay : 100
         })
     },1500)

@@ -85,7 +85,7 @@ p.header {
     transform: translate(-50%,-50%);
     top: 18vh;
     left: -100vw;
-    z-index: 3;
+    z-index: 1;
 }
 div.infos {
     height: 10vh;
@@ -107,10 +107,22 @@ p.infos {
 
 /* Contact */
 
-div.contact {
-    position: absolute;
+.contact {
+    transform: translate(-50%,-50%);
+    top: 35vh;
+    left: 200vw;
     z-index: 1;
+}
+div.contact {
+    height: 10vh;
+    width: 60vw;
+    border-radius: 5vw;
     background-color: var(--bright);
+}
+p.contact {
+    font-size: 14px;
+    height: 8vh;
+    width: 55vw;
 }
 
 /* Indexes */
