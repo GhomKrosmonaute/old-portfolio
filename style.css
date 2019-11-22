@@ -21,6 +21,8 @@ body {
     --bright : #373737;
     --white : #F0F0F0;
 
+    --indexes-size : 3vw;
+
     height: 100vh;
     overflow: hidden;
     flex-direction: column;
@@ -38,6 +40,7 @@ body > div {
     z-index: 1;
 }
 body > p {
+    white-space: nowrap;
     position: absolute;
     transform: translateX(-50%);
     left: 50vw;
@@ -72,8 +75,8 @@ div.header {
 }
 p.header {
     z-index: 3;
-    vertical-align: middle;
     top: -10vh;
+    font-size: 20px;
 }
 
 /* Infos */
@@ -90,9 +93,16 @@ div.infos {
     border-radius: 5vh;
     background-color: var(--light);
 }
+    div.infos img {
+        height: 10vh;
+        display: block;
+        overflow: hidden;
+        border-radius: 50%;
+    }
 p.infos {
+    font-size: 14px;
     height: 8vh;
-    width: 50vw;
+    width: 40vw;
 }
 
 /* Contact */
@@ -108,9 +118,9 @@ div.contact {
 .indexes {
     position: absolute;
     z-index: 2;
-    left: 0;
+    left: -5vw;
     top: 0;
-    width: 3vw;
+    width: var(--indexes-size);
     height: 100vh;
     background-color: #f0f0f010;
     color: var(--black);
@@ -118,10 +128,11 @@ div.contact {
 }
     .indexes li {
         width: 100%;
+        height: var(--indexes-size);
         text-align: center;
         position: absolute;
         z-index: 2;
-        left: -5vw;
+        left: -50vw;
         top: 0;
     }
 

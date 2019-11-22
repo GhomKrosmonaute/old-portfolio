@@ -30,12 +30,14 @@ $( () => {
             targets : 'div.' + classe,
             top : animation.top + 'vh',
             rotateZ : animation.rotate + 'deg',
+            easing : 'easeInOutBack',
             delay : delay
         })
 
         anime({
             targets : 'p.' + classe,
             top : (animation.top + 2) + 'vh',
+            easing : 'easeInOutBack',
             delay : delay + 100
         })
     }
@@ -54,16 +56,22 @@ $( () => {
 
     // INFOS
 
-    anime({
-        targets : 'div.infos',
-        left : '50vw',
-        delay : 1500
-    })
-    anime({
-        targets : 'p.infos',
-        left : '50vw',
-        delay : 1600
-    })
+    setTimeout(()=>{
+        anime({
+            targets : 'div.infos',
+            left : '50vw'
+        })
+        anime({
+            targets : 'div.infos img',
+            rotateZ : '360deg',
+            easing : 'easeInOutBack'
+        })
+        anime({
+            targets : 'p.infos',
+            left : '60vw',
+            delay : 100
+        })
+    },1500)
 
     // INDEXES
 
@@ -72,11 +80,13 @@ $( () => {
         $('.indexes').append('<li style="top:' + (i * 3) + 'vw;">' + (i + 1) + '</li>')
     }
 
-    anime({
-        targets: '.indexes > li',
-        left: 0,
-        delay: anime.stagger(30)
-    });
+    setTimeout(()=>{
+        anime({
+            targets: '.indexes, .indexes > li',
+            left: 0,
+            delay: anime.stagger(10)
+        });
+    },1500)
 
     //=======================================================================
     //                                                                       
