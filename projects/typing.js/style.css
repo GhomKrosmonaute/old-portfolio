@@ -91,3 +91,6 @@ input[type="text"] {
         color: #d88;
         border: 4px solid #d88;
     }
+    .doc-button {
+        top: 50vh;
+    }
