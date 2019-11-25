@@ -17,8 +17,9 @@ body {
     --black : #131313;
     --dark : #1C1C1C;
     --grey : #292929;
-    --light : #4b4b4b;
     --bright : #373737;
+    --light : #4b4b4b;
+    --light-plus : #585858;
     --white : #F0F0F0;
     --none : #00000000;
 
@@ -109,7 +110,7 @@ div.infos {
     height: 10vh;
     width: 70vw;
     border-radius: 5vh;
-    background-color: var(--light);
+    background-color: var(--light-plus);
 }
     div.infos img {
         height: 10vh;

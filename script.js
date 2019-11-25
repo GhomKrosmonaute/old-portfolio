@@ -94,17 +94,20 @@ $( () => {
                     value: 1,
                     round: true
                 },
+                duration : 1000
             },
             {
                 targets : 'div.infos',
                 height: '10vh',
                 width: '70vw',
-                left : '50vw'
+                left : '50vw',
+                duration : 1000
             },
             {
                 targets : 'div.infos img',
                 rotateZ : '360deg',
-                easing : 'easeInOutBack'
+                easing : 'easeInOutBack',
+                duration : 1000
             },
             {
                 targets : 'p.infos',
@@ -112,7 +115,8 @@ $( () => {
                 fontSize: '14px',
                 height: '8vh',
                 width: '40vw',
-                delay : 100
+                delay : 100,
+                duration : 1000
             }
         ],
         detail : [
@@ -266,7 +270,10 @@ function showButton( name ){
         targets : 'button',
         width: '10vw',
         height: '10vw',
-        begin: ()=>$('button').show(),
+        begin: ()=>{
+            if(current != 'null')
+            $('button').show()
+        },
         duration: 1000
     })
 }
@@ -282,7 +289,10 @@ function hideButton(){
         targets : 'button',
         width: '0',
         height: '0',
-        complete: ()=>$('button').hide(),
+        complete: ()=>{
+            if(current == 'null')
+            $('button').hide()
+        },
         duration: 1000
     })
 }
