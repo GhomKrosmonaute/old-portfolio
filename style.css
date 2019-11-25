@@ -20,6 +20,7 @@ body {
     --light : #4b4b4b;
     --bright : #373737;
     --white : #F0F0F0;
+    --none : #00000000;
 
     --indexes-size : 3vw;
 
@@ -28,6 +29,23 @@ body {
     flex-direction: column;
     background-color: var(--light);
     color: var(--white);
+}
+
+/* Buttons */
+
+button {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    left: 90vw;
+    top: 10vw;
+    width: 0;
+    height: 0;
+    transform: translate(-50%,-50%);
+    background-color: var(--white);
+    border: 3px solid var(--dark);
+    color: var(--dark);
+    border-radius: 50%;
 }
 
 /* Animations To Bottom */
@@ -146,6 +164,7 @@ p.contact {
         z-index: 2;
         left: -50vw;
         top: 0;
+        transform: translateY(10vh);
     }
 
 /*
