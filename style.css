@@ -32,16 +32,28 @@ body {
     color: var(--white);
 }
 
+.numeric {
+    font-family: 'Roboto Mono', monospace;
+}
+.hand {
+    position: absolute;
+    transform: rotateZ(40deg);
+    z-index: 20;
+    left: 150vw;
+    top: 20vh;
+    font-size: 30px;
+}
+
 /* Buttons */
 
 button {
     display: none;
     position: absolute;
     z-index: 20;
-    left: 90vw;
+    left: 115vw;
     top: 10vw;
-    width: 0;
-    height: 0;
+    width: 10vw;
+    height: 10vw;
     transform: translate(-50%,-50%);
     background-color: var(--white);
     border: 3px solid var(--dark);
@@ -58,7 +70,7 @@ body > div {
     width: 200vw;
     z-index: 1;
 }
-body > p {
+body > section {
     white-space: nowrap;
     position: absolute;
     transform: translateX(-50%);
@@ -70,7 +82,7 @@ div.to-bottom {
     bottom: -100vh;
     box-shadow: 0 -1vh 2vh #00000041;
 }
-p.to-bottom {
+section.to-bottom {
     bottom: -50vh;
 }
 
@@ -92,11 +104,17 @@ div.header {
     height: 100vh;
     background-color: var(--dark);
 }
-p.header {
+section.header {
     z-index: 3;
     top: -10vh;
     font-size: 20px;
 }
+    section.header .icon {
+        color: var(--light-plus);
+    }
+    section.header .icon:hover {
+        color: var(--white);
+    }
 
 /* Infos */
 
@@ -118,7 +136,7 @@ div.infos {
         overflow: hidden;
         border-radius: 50%;
     }
-p.infos {
+section.infos {
     font-size: 14px;
     height: 8vh;
     width: 40vw;
@@ -128,21 +146,32 @@ p.infos {
 
 .contact {
     transform: translate(-50%,-50%);
-    top: 35vh;
+    top: 32vh;
     left: 200vw;
     z-index: 1;
 }
 div.contact {
-    height: 10vh;
+    height: 12vh;
     width: 60vw;
     border-radius: 5vw;
     background-color: var(--bright);
 }
-p.contact {
-    font-size: 14px;
+section.contact {
+    font-size: 9px;
     height: 8vh;
     width: 55vw;
 }
+    section.contact .icon {
+        color: var(--light-plus);
+        text-align: center;
+        padding: 0 2vw;
+    }
+    section.contact .icon:hover {
+        color: var(--white);
+    }
+    section.contact .info {
+        padding: .5vw 0;
+    }
 
 /* Indexes */
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" > 
     <link rel="stylesheet" href="libs/bootstrap.min.css">
     <link rel="stylesheet" href="libs/fontawesome.css">
     <link rel="stylesheet" href="style.css">
@@ -15,46 +16,60 @@
     <button class="shadow"><i class="fas fa-times"></i></button>
 
     <div class="header shadow"></div>
-    <p class="header"> 
-        <i class="fas fa-terminal"></i> Développeur WEB
-    </p>
+    <section class="header"> 
+        <span class="icon"> <i class="fas fa-terminal"></i> </span> Développeur WEB
+    </section>
 
     <div class="infos shadow">
         <img class="shadow" src="img/avatar.png" alt="Mon avatar">
     </div>
-    <p class="infos font-weight-light">
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="AKA Ghom"> ABELLA Camille </span> <br>
+    <section class="infos font-weight-light">
+        <span class=""> ABELLA Camille </span> <br>
         <span class=""> Habite à Perpignan (66) </span> <br>
         <span class=""> Développeur WEB </span>
-    </p>
+    </section>
     
     <div class="contact shadow"></div>
-    <p class="contact"> 
-        Contact 
-    </p>
+    <section class="contact"> 
+        <table>
+            <tr>
+                <td class="icon"> <i class="fas fa-mobile-alt"></i> </td>
+                <td class="info numeric"> 06 71 31 13 56 </td>
+            </tr>
+            <tr>
+                <td class="icon"> <i class="fas fa-at"></i> </td>
+                <td class="info"> camille.abella@hotmail.fr </td>
+            </tr>
+            <tr>
+                <td class="icon"> <i class="fas fa-map-marker-alt"></i> </td>
+                <td class="info"> 9 HLM Camp del roc <br> Vinça - <span class="numeric"> 66320 </span></td>
+            </tr>
+        </table>
+    </section>
 
     <div class="to-bottom projects"></div>
-    <p class="to-bottom projects"> 
+    <section class="to-bottom projects"> 
         Projects 
-    </p>
+    </section>
 
     <div class="to-bottom skills"></div>
-    <p class="to-bottom skills"> 
+    <section class="to-bottom skills"> 
         Skills 
-    </p>
+    </section>
 
     <div class="to-bottom footer"></div>
-    <p class="to-bottom footer"> 
+    <section class="to-bottom footer"> 
         Footer 
-    </p>
+    </section>
 
+    <span class="hand"><i class="fas fa-hand-point-down"></i></span>
     <ol class="indexes"></ol>
 
     <script src="libs/fontawesome.js"></script>
     <script src="libs/jquery-3.4.1.min.js"></script>
     <script src="libs/bootstrap.bundle.min.js"></script>
-    <script src="libs/particles.js"></script>
     <script src="libs/anime.js"></script>
+    <script src="setup.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
