@@ -181,11 +181,13 @@ $(()=>{
                         top : params.top + 'vh',
                         rotateZ : params.rotate + 'deg',
                         easing : 'easeInOutBack',
+                        delay : eval(`()=> starting ? ${delay} : 0`)
                     })
                     anime({
                         targets : 'section.' + classe,
                         top : (params.top + 2) + 'vh',
                         easing : 'easeInOutBack',
+                        delay : eval(`()=> starting ? ${delay + 200} : 0`)
                     })
                 }
             }
