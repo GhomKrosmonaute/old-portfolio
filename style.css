@@ -1,4 +1,9 @@
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +29,10 @@ body {
     --none : #00000000;
 
     --indexes-size : 3vw;
+    --spin : spin 2s linear infinite;
+    --shadow-center : 0 0 2vh #0000004b;
+    --shadow-top : 0 -1vh 2vh #00000041;
+    --shadow-bottom : 0 1vh 2vh #00000041;
 
     height: 100vh;
     overflow: hidden;
@@ -35,6 +44,60 @@ body {
 .numeric {
     font-family: 'Roboto Mono', monospace;
 }
+
+/* Loader */
+
+.loader,
+.loader-text,
+.loader-top, 
+.loader-bottom {
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 100;
+    left: 50vw;
+    top: 50vh;
+}
+
+.loader {
+    top: 50vh;
+    width: 30vw;
+    height: 30vw;
+}
+    .loader > div {
+        animation: var(--spin);
+        border-radius: 50%;
+        border: 2vw solid var(--black); /* Light grey */
+        border-top: 2vw solid var(--light); /* Blue */
+        background-color: var(--grey);
+        width: 100%;
+        height: 100%;
+        box-shadow: var(--shadow-center);
+    }
+.loader-text {
+    font-size: 25px;
+    width: min-content;
+    height: min-content;
+    color: var(--light-plus);
+}
+.loader-top,
+.loader-bottom {
+    width: 200vw;
+    height: 100vh;
+    border: 2vw ridge var(--dark);
+}
+.loader-top {
+    transform: translate(-50%,-100%);
+    background-image: linear-gradient(var(--bright),var(--grey));
+}
+.loader-bottom {
+    top: -50vh;
+    transform: translate(-50%, 100%);
+    background-image: linear-gradient(var(--grey),var(--bright));
+}
+
+
+/* Hand touch tuto */
+
 .hand {
     position: absolute;
     transform: rotateZ(40deg);
@@ -80,7 +143,7 @@ body > section {
 
 div.to-bottom {
     bottom: -100vh;
-    box-shadow: 0 -1vh 2vh #00000041;
+    box-shadow: var(--shadow-top)
 }
 section.to-bottom {
     bottom: -50vh;

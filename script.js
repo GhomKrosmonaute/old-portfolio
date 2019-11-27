@@ -3,7 +3,37 @@ var current = 'null';
 
 $(() => {
 
-    init(true)
+    const loaderText = $('.loader-text')
+    const temp = {
+        percent: loaderText.html()
+    }
+
+    anime({
+        targets: temp,
+        percent: '100%',
+        easing: 'linear',
+        round: 1,
+        duration: 2500,
+        update: () => loaderText.html(temp.percent),
+        complete: () => {
+            loaderText.html('Good')
+            init(true)
+            anime({
+                targets: '.loader-top, .loader-text, .loader',
+                delay: 500,
+                top: '-50vh',
+                duration: 5000
+            })
+            anime({
+                targets: '.loader-bottom',
+                delay: 400,
+                top: '50vh',
+                duration: 5000
+            })
+        }
+    })
+
+    
 
     $('button').click(()=>{
         hideButton()
@@ -11,19 +41,7 @@ $(() => {
 
     // INDEXES
 
-    const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
-    const indexes = $('.indexes')
-    for(var i=0; i<indexCount; i++){
-        indexes.append('<li style="top:' + (i * 3) + 'vw;">' + (i + 1) + '</li>')
-    }
-
-    setTimeout(()=>{
-        anime({
-            targets: '.indexes, .indexes > li',
-            left: 0,
-            delay: anime.stagger(10)
-        });
-    },1500)
+    
 
     // onClick listeners
 
@@ -39,21 +57,32 @@ $(() => {
         }
     }
 
-    // hand animation
-
-    anime({
-        targets : '.hand',
-        keyframes : [
-            {
-                left: '55vw',
-                top: '15vh'
-            }
-        ]
-    })
-
 })
 
 function init(starting){
+    if(starting){
+
+        const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
+        const indexes = $('.indexes')
+        for(var i=0; i<indexCount; i++){
+            indexes.append('<li style="top:' + (i * 3) + 'vw;">' + (i + 1) + '</li>')
+        }
+
+        setTimeout(()=>{
+            anime({
+                targets: '.indexes, .indexes > li',
+                left: 0,
+                delay: anime.stagger(10)
+            });
+        },1500)
+
+        if(handSequence){
+            anime({
+                targets : '.hand',
+                keyframes : handSequence
+            })
+        }
+    }
     for(classe in animes){
         animes[classe].initial(starting)
     }

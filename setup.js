@@ -1,5 +1,6 @@
 
-const animes = {};
+const animes = {}
+var handSequence = null
 
 $(()=>{
 
@@ -7,15 +8,22 @@ $(()=>{
 
     // WARN
     if(width >= 576){
-        $('body').append('<h1> <i class="fas fa-exclamation-circle"></i> Le responsive du site n\'est disponible pour le moment que sur les petits écrans ! (moins de 576 pixels de large)</h1>').css({
-            position: 'absolute',
-            top: '50vh',
-            left: '50vw',
-            width: '80vw',
-            'z-index': 100,
-            'font-size': '30px',
-            transform: 'translate(-50%,-50%)'
-        })
+        $('body').append(`
+            <h1 style="
+                text-align: center;
+                position: absolute;
+                top: 50vh;
+                left: 50vw;
+                width: 50vw;
+                z-index: 50;
+                font-size: 30px;
+                transform: translate(-50%,-50%);
+            "> 
+                <i class="fas fa-exclamation-circle"></i> <br>
+                Le responsive du site n\'est disponible pour le moment que sur les petits écrans ! <br>
+                (moins de 576 pixels de large)
+            </h1>
+        `)
     }
 
     if(width < 576){
@@ -29,6 +37,10 @@ $(()=>{
 //  ##      ##   #####   #####   ##  ######  #####  
 //                                                    
 //====================================================
+
+        handSequence = [
+            
+        ]
 
         animes.header = {
             initial : ()=>{
