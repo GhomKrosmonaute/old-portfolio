@@ -17,7 +17,6 @@ $(() => {
         update: () => loaderText.html(temp.percent),
         complete: () => {
             loaderText.html('Good')
-            init(true)
             anime({
                 targets: '.loader-top, .loader-text, .loader',
                 delay: 500,
@@ -30,20 +29,24 @@ $(() => {
                 top: '50vh',
                 duration: 5000
             })
+            setTimeout(()=>{
+                init(true)
+            },500)
         }
     })
 
+    // onClick listeners
     
-
     $('button').click(()=>{
         hideButton()
     })
 
-    // INDEXES
-
-    
-
-    // onClick listeners
+    $('.infos').click(()=>{
+        if(current != 'null' && current != 'infos'){
+            animes[current].initial()
+            animes.infos.focus()
+        }
+    })
 
     for(classe in animes){
         const element = animes[classe]
@@ -58,35 +61,6 @@ $(() => {
     }
 
 })
-
-function init(starting){
-    if(starting){
-
-        const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
-        const indexes = $('.indexes')
-        for(var i=0; i<indexCount; i++){
-            indexes.append('<li style="top:' + (i * 3) + 'vw;">' + (i + 1) + '</li>')
-        }
-
-        setTimeout(()=>{
-            anime({
-                targets: '.indexes, .indexes > li',
-                left: 0,
-                delay: anime.stagger(10)
-            });
-        },1500)
-
-        if(handSequence){
-            anime({
-                targets : '.hand',
-                keyframes : handSequence
-            })
-        }
-    }
-    for(classe in animes){
-        animes[classe].initial(starting)
-    }
-}
 
 function showButton( name ){
     current = name
@@ -115,4 +89,55 @@ function hideButton(){
         },
         duration: 1000
     })
+}
+
+function init(starting){
+
+    if(starting){
+
+        // INDEXES
+        const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
+        const indexes = $('.indexes')
+        for(var i=0; i<indexCount; i++){
+            indexes.append('<li style="top:' + (i * 5) + 'vw;">' + (i + 1) + '</li>')
+        }
+
+        setTimeout(()=>{
+            anime({
+                targets: '.indexes, .indexes > li',
+                left: 0,
+                delay: anime.stagger(10)
+            });
+        },1500)
+
+        // HAND
+        if(handSequence){
+            anime({
+                targets : '.hand',
+                keyframes : handSequence
+            })
+        }
+
+        // LIGHTS
+        anime({
+            targets : '.light.blue',
+            left : '-20vw',
+            top : '150vh',
+            duration : 5000,
+            delay : 1500
+        })
+        anime({
+            targets : '.light.purple',
+            left : '120vw',
+            top : '-50vh',
+            duration : 5000,
+            delay : 1500,
+            complete : ()=>$('.light').hide()
+        })
+
+    }
+
+    for(classe in animes){
+        animes[classe].initial(starting)
+    }
 }

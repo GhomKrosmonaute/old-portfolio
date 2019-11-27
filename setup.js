@@ -43,7 +43,9 @@ $(()=>{
         ]
 
         animes.header = {
-            initial : ()=>{
+            initial : async starting => {
+                if(starting) 
+                await new Promise(resolve => setTimeout(resolve,500))
                 anime({
                     targets : 'div.header',
                     top : '-90vh'
@@ -57,12 +59,15 @@ $(()=>{
         }
 
         animes.infos = {
-            initial : ()=>{
+            initial : async starting => {
+                if(starting) 
+                await new Promise(resolve => setTimeout(resolve,500))
                 anime({
                     targets : '.infos',
                     top: '18vh',
+                    easing : 'easeInOutBack',
                     zIndex: {
-                        value: 1,
+                        value: 11,
                         round: true
                     },
                     duration : 1000
@@ -72,6 +77,7 @@ $(()=>{
                     height: '10vh',
                     width: '70vw',
                     left : '50vw',
+                    easing : 'easeInOutBack',
                     duration : 1000
                 })
                 anime({
@@ -86,6 +92,7 @@ $(()=>{
                     fontSize: '14px',
                     height: '8vh',
                     width: '40vw',
+                    easing : 'easeInOutBack',
                     delay : 100,
                     duration : 1000
                 })
@@ -113,7 +120,9 @@ $(()=>{
         }
 
         animes.contact = {
-            initial : ()=>{
+            initial : async starting => {
+                if(starting) 
+                await new Promise(resolve => setTimeout(resolve,500))
                 anime({
                     targets : '.contact',
                     left : '40vw',
@@ -156,7 +165,7 @@ $(()=>{
                     width : '80vw',
                     height: '80vh',
                     zIndex: {
-                        value: 10,
+                        value: 12,
                         round: true
                     },
                     duration: 1000
@@ -187,21 +196,21 @@ $(()=>{
             const params = toBottom[classe]
     
             animes[classe] = {
-                initial : (starting) => {
+                initial : eval(`(starting) => {
                     anime({
-                        targets : 'div.' + classe,
-                        top : params.top + 'vh',
-                        rotateZ : params.rotate + 'deg',
+                        targets : 'div.${classe}',
+                        top : '${params.top}vh',
+                        rotateZ : '${params.rotate}deg',
                         easing : 'easeInOutBack',
-                        delay : eval(`()=> starting ? ${delay} : 0`)
+                        delay : starting ? ${delay} : 0
                     })
                     anime({
-                        targets : 'section.' + classe,
-                        top : (params.top + 2) + 'vh',
+                        targets : 'section.${classe}',
+                        top : '${params.top + 2}vh',
                         easing : 'easeInOutBack',
-                        delay : eval(`()=> starting ? ${delay + 200} : 0`)
+                        delay : starting ? ${delay + 200} : 0
                     })
-                }
+                }`)
             }
         }
 

@@ -27,8 +27,9 @@ body {
     --light-plus : #585858;
     --white : #F0F0F0;
     --none : #00000000;
+    --transparent : #f0f0f010;
 
-    --indexes-size : 3vw;
+    --indexes-size : 5vw;
     --spin : spin 2s linear infinite;
     --shadow-center : 0 0 2vh #0000004b;
     --shadow-top : 0 -1vh 2vh #00000041;
@@ -84,17 +85,40 @@ body {
     width: 200vw;
     height: 100vh;
     border: 2vw ridge var(--dark);
+    background-image: linear-gradient(var(--grey),var(--black),var(--grey));
 }
 .loader-top {
     transform: translate(-50%,-100%);
-    background-image: linear-gradient(var(--bright),var(--grey));
 }
 .loader-bottom {
     top: -50vh;
     transform: translate(-50%, 100%);
-    background-image: linear-gradient(var(--grey),var(--bright));
 }
 
+/* Lights */
+
+.light {
+    overflow: visible;
+    color: var(--none);
+    background-color: var(--none);
+    border: none;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    height: 200vh;
+    z-index: 60;
+}
+.light.blue {
+    width: 200vw;
+    top: -50vh;
+    left: -20vw;
+    background-image: radial-gradient(#ffc82f15,#ffffff00,#ffffff00);
+}
+.light.purple {
+    width: 200vw;
+    top: 150vh;
+    left: 120vw;
+    background-image: radial-gradient(#2ff8ff13,#ffffff00,#ffffff00);
+}
 
 /* Hand touch tuto */
 
@@ -142,6 +166,7 @@ body > section {
 }
 
 div.to-bottom {
+    border: 3px ridge var(--transparent);
     bottom: -100vh;
     box-shadow: var(--shadow-top)
 }
@@ -161,14 +186,15 @@ div.projects {
 
 /* Header */
 
+.header {
+    z-index: 15;
+}
 div.header {
-    z-index: 3;
     top: -100vh;
     height: 100vh;
     background-color: var(--dark);
 }
 section.header {
-    z-index: 3;
     top: -10vh;
     font-size: 20px;
 }
@@ -185,7 +211,7 @@ section.header {
     transform: translate(-50%,-50%);
     top: 18vh;
     left: -100vw;
-    z-index: 1;
+    z-index: 11;
 }
 div.infos {
     height: 10vh;
@@ -216,7 +242,7 @@ section.infos {
 div.contact {
     height: 12vh;
     width: 60vw;
-    border-radius: 5vw;
+    border-radius: 1vw;
     background-color: var(--bright);
 }
 section.contact {
@@ -245,9 +271,9 @@ section.contact {
     top: 0;
     width: var(--indexes-size);
     height: 100vh;
-    background-color: #f0f0f010;
+    background-color: var(--transparent);
     color: var(--black);
-    font-size: 2vw;
+    font-size: 3vw;
 }
     .indexes li {
         width: 100%;
