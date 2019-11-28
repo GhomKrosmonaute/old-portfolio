@@ -1,6 +1,73 @@
 
 const animes = {}
 var handSequence = null
+const projectsTypes = {
+    community : 'warning',
+    bot : 'primary',
+    app : 'danger',
+    lib : 'info',
+    game : 'success'
+}
+const projects = {
+    perso : [
+        {
+            type : 'community',
+            name : 'Les Laboratoires JS',
+            desc : 'Projet d\'entraide communautaire autour du JavaScript.',
+            link : 'https://top.gg/servers/507389389098188820'
+        },
+        {
+            type : 'bot',
+            name : 'Unicorn Trap',
+            desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
+            link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot'
+        },
+        {
+            type : 'bot',
+            name : 'Discord JS',
+            desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
+            link : 'https://top.gg/bot/554108430298775564'
+        },
+        {
+            type : 'game',
+            name : 'Gario',
+            desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
+            link : 'https://camilleabella.github.io/Gario/'
+        },
+        {
+            type : 'game',
+            name : 'Tetris en Canvas',
+            desc : '',
+            link : 'https://github.com/CamilleAbella/TetrisCanvas'
+        },
+        {
+            type : 'lib',
+            name : 'Typing.js',
+            desc : 'HTML keyboard typing by ID element.',
+            link : 'https://camilleabella.github.io/Typing.js/'
+        },
+        {
+            type : 'lib',
+            name : 'Color Engine',
+            desc : 'Color engine for creates color gradients from a few colors and converts RBG colors to HEX and vice versa.',
+            link : 'https://github.com/CamilleAbella/Color-Engine'
+        },
+        {
+            type : 'lib',
+            name : 'HoverTree',
+            desc : 'CSS framework for fast and easy menus and sub-menus',
+            link : 'https://github.com/CamilleAbella/HoverTree-CSS-Framework'
+        }
+    ],
+    pro : [
+        {
+            type : 'app',
+            name : 'Rednit',
+            desc : '',
+            link : '#'
+        }
+    ]
+}
 
 $(()=>{
 
@@ -206,8 +273,13 @@ $(()=>{
                     })
                     anime({
                         targets : 'section.${classe}',
-                        top : '${params.top + 2}vh',
+                        top : '${params.top + 50}vh',
                         easing : 'easeInOutBack',
+                        delay : starting ? ${delay + 200} : 0
+                    })
+                    anime({
+                        targets : 'section.${classe} h2',
+                        translateY : '-45vh',
                         delay : starting ? ${delay + 200} : 0
                     })
                 }`)
@@ -234,6 +306,10 @@ $(()=>{
                         top : '25vh',
                         duration : 1000,
                     })
+                    anime({
+                        targets : 'section.${classe} h2',
+                        translateY : '0'
+                    })
                     ${dessus.map(e => {
                         const [c,p] = e
                         return `anime({
@@ -258,6 +334,10 @@ $(()=>{
                             targets : 'section.${c}',
                             top : '110vh',
                             duration : 1000
+                        })
+                        anime({
+                            targets : 'section.${c} h2',
+                            translateY : '20vh'
                         })`
                     }).join('\n')}
                 }`)

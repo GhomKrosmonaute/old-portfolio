@@ -9,7 +9,7 @@
     padding: 0;
 }
 
-a {
+a, a:hover {
     color: inherit;
     text-decoration: none;
 }
@@ -40,6 +40,20 @@ body {
     flex-direction: column;
     background-color: var(--light);
     color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,.title {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 { font-size: 20px; }
+h2 { font-size: 20px; text-align: center; }
+h3 { font-size: 18px; padding-top: 20px; color: var(--light-plus);}
+h4 { font-size: 16px; }
+
+td {
+    padding: 0 1vw;
 }
 
 .numeric {
@@ -98,6 +112,7 @@ body {
 /* Lights */
 
 .light {
+    pointer-events:none;
     overflow: visible;
     color: var(--none);
     background-color: var(--none);
@@ -196,7 +211,6 @@ div.header {
 }
 section.header {
     top: -10vh;
-    font-size: 20px;
 }
     section.header .icon {
         color: var(--light-plus);

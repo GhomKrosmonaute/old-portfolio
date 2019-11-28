@@ -95,6 +95,17 @@ function init(starting){
 
     if(starting){
 
+        // PROJECTS
+        for(type in projects){
+            const table = $('.projects .'+type)
+            for(const project of projects[type]){
+                table.append(`<tr>
+                    <td class="text-right"> <span class="badge badge-${projectsTypes[project.type]}"> ${project.type} </span> </td>
+                    <td> <a href="${project.link}" target="_blank"> ${project.name} </a> </td>
+                </tr>`)
+            }
+        }
+
         // INDEXES
         const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
         const indexes = $('.indexes')
@@ -123,14 +134,14 @@ function init(starting){
             targets : '.light.blue',
             left : '-20vw',
             top : '150vh',
-            duration : 5000,
+            duration : 6000,
             delay : 1500
         })
         anime({
             targets : '.light.purple',
             left : '120vw',
             top : '-50vh',
-            duration : 5000,
+            duration : 6000,
             delay : 1500,
             complete : ()=>$('.light').hide()
         })
