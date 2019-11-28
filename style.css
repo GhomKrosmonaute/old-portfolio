@@ -18,6 +18,10 @@ ul, ol, li {
     list-style: none;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     --black : #131313;
     --dark : #1C1C1C;
@@ -35,6 +39,7 @@ body {
     --shadow-top : 0 -1vh 2vh #00000041;
     --shadow-bottom : 0 1vh 2vh #00000041;
 
+    position: relative;
     height: 100vh;
     overflow: hidden;
     flex-direction: column;
