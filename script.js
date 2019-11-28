@@ -1,5 +1,6 @@
 
-var current = 'null';
+var current = 'null'
+var popup = false
 
 $(() => {
 
@@ -96,7 +97,7 @@ function showButton( name ){
     else current = name
     anime({
         targets : 'button',
-        left : '90vw',
+        right : '0vh',
         begin: ()=>{
             if(current != 'null')
             $('button').show()
@@ -119,7 +120,7 @@ function hideButton(){
         current = 'null'
         anime({
             targets : 'button',
-            left : '115vw',
+            right : '-20vh',
             complete: ()=>{
                 if(current == 'null')
                 $('button').hide()

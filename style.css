@@ -23,15 +23,15 @@ html {
 }
 
 body {
-    --black : #131313;
-    --dark : #1C1C1C;
-    --grey : #292929;
-    --bright : #373737;
-    --light : #4b4b4b;
-    --light-plus : #585858;
+    --black :       #131313;
+    --dark :        #1C1C1C;
+    --grey :        #292929;
+    --bright :      #373737;
+    --light :       #4b4b4b;
+    --light-plus :  #585858;
     --extra-light : #a5a5a5;
-    --white : #F0F0F0;
-    --none : #00000000;
+    --white :       #F0F0F0;
+    --none :        #00000000;
     --transparent : #f0f0f010;
 
     --indexes-size : 5vw;
@@ -42,11 +42,13 @@ body {
 
     position: relative;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
     flex-direction: column;
     background-color: var(--light);
     color: var(--white);
     font-family: 'Roboto', sans-serif;
+    font-size: 2.1vh;
 }
 
 h1,h2,h3,h4,.title {
@@ -55,10 +57,10 @@ h1,h2,h3,h4,.title {
     white-space: nowrap;
 }
 
-h1 { font-size: 20px; }
-h2 { font-size: 28px; text-shadow: var(--shadow-center); color: var(--extra-light);}
-h3 { font-size: 18px; padding-top: 20px; color: var(--extra-light);}
-h4 { font-size: 16px; }
+h1 { font-size: 2.7vh; }
+h2 { font-size: 3.8vh; text-shadow: var(--shadow-center); color: var(--extra-light);}
+h3 { font-size: 2.9vh; padding-top: 3.1vh; color: var(--extra-light);}
+h4 { font-size: 2.5vh; }
 
 td {
     padding: 0 1vw;
@@ -78,7 +80,7 @@ td {
     top: 50vh;
     width: 80vw;
     height: min-content;
-    max-height: 50vh;
+    /* max-height: 50vh; */
     background-color: var(--dark);
     border-radius: 2vw;
     padding: 3vw;
@@ -145,7 +147,7 @@ td {
         box-shadow: var(--shadow-center);
     }
 .loader-text {
-    font-size: 25px;
+    font-size: 3.4vh;
     width: min-content;
     height: min-content;
     color: var(--extra-light);
@@ -199,24 +201,25 @@ td {
     z-index: 20;
     left: 150vw;
     top: 20vh;
-    font-size: 30px;
+    font-size: 4vh;
 }
 
-/* Buttons */
+/* Button */
 
 button {
     display: none;
     position: absolute;
     z-index: 20;
-    left: 115vw;
-    top: 10vw;
-    width: 10vw;
-    height: 10vw;
+    right: -20vw;
+    top: 5vh;
+    width: 6vh;
+    height: 6vh;
     transform: translate(-50%,-50%);
     background-color: var(--white);
     border: 3px solid var(--dark);
     color: var(--dark);
     border-radius: 50%;
+    font-size: 3vh;
 }
 
 /* Animations To Bottom */
@@ -301,7 +304,7 @@ div.infos {
         border-radius: 50%;
     }
 section.infos {
-    font-size: 14px;
+    font-size: 1.9vh;
     height: 8vh;
     width: 40vw;
 }
@@ -321,7 +324,7 @@ div.contact {
     background-color: var(--bright);
 }
 section.contact {
-    font-size: 9px;
+    font-size: 1.2vh;
     height: 8vh;
     width: 55vw;
 }
