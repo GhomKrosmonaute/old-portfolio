@@ -35,7 +35,7 @@ const projects = {
             desc : '',
             link : 'https://github.com/CamilleAbella/JS-Labs-Website',
             used : ['PHP','JS','CSS','PGSQL'],
-            preview : ''
+            preview : 'img/preview-labs-website.png'
         },
         {
             type : 'site',
@@ -50,8 +50,8 @@ const projects = {
             name : 'Unicorn Trap',
             desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
             link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot',
-            used : ['JS','NodeJS','Discord.js'],
-            preview : ''
+            used : ['JS','NodeJS','Discord.js','Color Engine'],
+            preview : 'img/preview-unicorn-trap.PNG'
         },
         {
             type : 'bot',
@@ -59,7 +59,7 @@ const projects = {
             desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
             link : 'https://top.gg/bot/554108430298775564',
             used : ['JS','NodeJS','Discord.js'],
-            preview : ''
+            preview : 'img/preview-discord-js.PNG'
         },
         {
             type : 'game',
@@ -67,13 +67,13 @@ const projects = {
             desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
             link : 'https://camilleabella.github.io/Gario/',
             used : ['HTML','JS','p5.js'],
-            preview : ''
+            preview : 'img/preview-gario.png'
         },
         {
             type : 'game',
             name : 'Tetris en Canvas',
             desc : '',
-            link : 'https://github.com/CamilleAbella/TetrisCanvas',
+            link : 'https://camilleabella.github.io/TetrisCanvas/',
             used : ['HTML','CSS','JS','Canvas'],
             preview : ''
         },
@@ -83,7 +83,7 @@ const projects = {
             desc : 'HTML keyboard typing by ID element.',
             link : 'https://camilleabella.github.io/Typing.js/',
             used : ['JS'],
-            preview : ''
+            preview : 'img/preview-typing-js.png'
         },
         {
             type : 'lib',
@@ -114,15 +114,15 @@ const projects = {
         {
             type : 'app',
             name : 'Rednit',
-            desc : 'Project ayant gagné la troisième place du <a href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
+            desc : 'Project ayant gagné la troisième place du <a class="text-info" target="_blank" href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
             link : '#',
             used : ['Python','JS','Rasa','React','PGSQL'],
-            preview : ''
+            preview : 'img/preview-rednit.png'
         },
         {
             type : 'site',
             name : 'Ce Portfolio 😉',
-            desc : '',
+            desc : 'Mon CV en ligne, vous le lisez actuellement.',
             link : 'https://camilleabella.github.io/',
             used : ['HTML','JS','CSS','jQuery','Bootstrap','Anime.js'],
             preview : ''
@@ -130,7 +130,7 @@ const projects = {
         {
             type : 'site',
             name : 'Fake Toys\'R\'Us',
-            desc : 'Projet PHP lors de ma formation à l\'Idem.',
+            desc : 'Projet PHP lors de ma formation WEB à l\'Idem.',
             link : 'https://github.com/CamilleAbella/ERN-WEB-project-1',
             used : ['PHP','CSS','MySQL'],
             preview : ''

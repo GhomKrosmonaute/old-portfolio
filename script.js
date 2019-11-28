@@ -71,9 +71,11 @@ $(() => {
                             <span> ${project.used.map(used=>`<span class="badge badge-secondary"> ${used} </span>`).join(' ')} </span>
                             <p> ${project.desc} </p>
                             ${project.preview ? `
-                            <div class="preview">
-                                <img src="${project.preview}" alt="preview image">
-                            </div>
+                            <a href="${project.preview}" target="_blank">
+                                <div class="preview">
+                                    <img src="${project.preview}" alt="preview image">
+                                </div>
+                            </a>
                             ` : ''}
                         \`)
                         anime({
