@@ -12,69 +12,114 @@ function preventMotion(event)
 const animes = {}
 var handSequence = null
 const projectsTypes = {
-    community : 'warning',
+    org : 'warning',
     bot : 'primary',
     app : 'danger',
     lib : 'info',
-    game : 'success'
+    game : 'success',
+    site : 'black'
 }
 const projects = {
     perso : [
         {
-            type : 'community',
+            type : 'org',
             name : 'Les Laboratoires JS',
             desc : 'Projet d\'entraide communautaire autour du JavaScript.',
-            link : 'https://top.gg/servers/507389389098188820'
+            link : 'https://top.gg/servers/507389389098188820',
+            used : ['Discord']
+        },
+        {
+            type : 'site',
+            name : 'JS Labs',
+            desc : '',
+            link : 'https://github.com/CamilleAbella/JS-Labs-Website',
+            used : ['PHP','JS','CSS','PGSQL']
+        },
+        {
+            type : 'site',
+            name : 'JS Labs - Admin Dashboard',
+            desc : '',
+            link : 'https://github.com/CamilleAbella/LabsAdmin-Dashboard',
+            used : ['JS','Express','Bootstrap','PGSQL']
         },
         {
             type : 'bot',
             name : 'Unicorn Trap',
             desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
-            link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot'
+            link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot',
+            used : ['JS','NodeJS','Discord.js']
         },
         {
             type : 'bot',
             name : 'Discord JS',
             desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
-            link : 'https://top.gg/bot/554108430298775564'
+            link : 'https://top.gg/bot/554108430298775564',
+            used : ['JS','NodeJS','Discord.js']
         },
         {
             type : 'game',
             name : 'Gario',
             desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
-            link : 'https://camilleabella.github.io/Gario/'
+            link : 'https://camilleabella.github.io/Gario/',
+            used : ['HTML','JS','p5.js']
         },
         {
             type : 'game',
             name : 'Tetris en Canvas',
             desc : '',
-            link : 'https://github.com/CamilleAbella/TetrisCanvas'
+            link : 'https://github.com/CamilleAbella/TetrisCanvas',
+            used : ['HTML','CSS','JS','Canvas']
         },
         {
             type : 'lib',
             name : 'Typing.js',
             desc : 'HTML keyboard typing by ID element.',
-            link : 'https://camilleabella.github.io/Typing.js/'
+            link : 'https://camilleabella.github.io/Typing.js/',
+            used : ['JS']
+        },
+        {
+            type : 'lib',
+            name : 'GodEmbed',
+            desc : '',
+            link : 'https://github.com/CamilleAbella/GodEmbed/tree/master/Module',
+            used : ['JS','NodeJS']
         },
         {
             type : 'lib',
             name : 'Color Engine',
             desc : 'Color engine for creates color gradients from a few colors and converts RBG colors to HEX and vice versa.',
-            link : 'https://github.com/CamilleAbella/Color-Engine'
+            link : 'https://github.com/CamilleAbella/Color-Engine',
+            used : ['JS','NodeJS']
         },
         {
             type : 'lib',
             name : 'HoverTree',
-            desc : 'CSS framework for fast and easy menus and sub-menus',
-            link : 'https://github.com/CamilleAbella/HoverTree-CSS-Framework'
+            desc : 'CSS framework for fast and easy menus and sub-menus.',
+            link : 'https://github.com/CamilleAbella/HoverTree-CSS-Framework',
+            used : ['JS','jQuery']
         }
     ],
     pro : [
         {
             type : 'app',
             name : 'Rednit',
+            desc : 'Project ayant gagné la troisième place du <a href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
+            link : '#',
+            used : ['Python','JS','Rasa','React','PGSQL']
+        },
+        {
+            type : 'site',
+            name : 'Ce Portfolio 😉',
             desc : '',
-            link : '#'
+            link : 'https://camilleabella.github.io/',
+            used : ['HTML','JS','CSS','jQuery','Bootstrap','Anime.js']
+        },
+        {
+            type : 'site',
+            name : 'Fake Toys\'R\'Us',
+            desc : 'Projet PHP lors de ma formation à l\'Idem.',
+            link : 'https://github.com/CamilleAbella/ERN-WEB-project-1',
+            used : ['PHP','CSS','MySQL']
         }
     ]
 }

@@ -101,7 +101,15 @@ function init(starting){
             for(const project of projects[type]){
                 table.append(`<tr>
                     <td class="text-right"> <span class="badge badge-${projectsTypes[project.type]}"> ${project.type} </span> </td>
-                    <td> <a href="${project.link}" target="_blank"> ${project.name} </a> </td>
+                    <td class="hidder"> 
+                        <a href="${project.link}" target="_blank"> ${project.name} </a> 
+                        <div class="hidden">
+                            ${project.used.map(used => {
+                                return `<span class="badge badge-black"> ${used} </span>`
+                            }).join('')} <br>
+                            ${project.desc}
+                        </div>
+                    </td>
                 </tr>`)
             }
         }
