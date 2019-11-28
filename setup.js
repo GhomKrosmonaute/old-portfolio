@@ -4,7 +4,7 @@ window.addEventListener("touchmove", preventMotion, false);
 
 function preventMotion(event)
 {
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     event.preventDefault();
     event.stopPropagation();
 }
