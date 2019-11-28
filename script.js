@@ -12,6 +12,7 @@ $(() => {
         targets: temp,
         percent: '100%',
         easing: 'linear',
+        color: '#000',
         round: 1,
         duration: 2500,
         update: () => loaderText.html(temp.percent),
@@ -60,10 +61,37 @@ $(() => {
         }
     }
 
+    setTimeout(()=>{
+        for(type in projects){
+            projects[type].forEach(( project, index ) => {
+                $(`.project-${type}-${index}`).click(
+                    eval(`()=>{
+                        $('.popup').html(\`
+                            <a href="${project.link}" target="_blank"> <h3> ${project.name} </h3> </a>
+                            <span> ${project.used.map(used=>`<span class="badge badge-secondary"> ${used} </span>`).join(' ')} </span>
+                            <p> ${project.desc} </p>
+                            ${project.preview ? `
+                            <div class="preview">
+                                <img src="${project.preview}" alt="preview image">
+                            </div>
+                            ` : ''}
+                        \`)
+                        anime({
+                            targets : '.popup',
+                            left : '50vw'
+                        })
+                        showButton()
+                    }`)
+                )
+            })
+        }
+    },5000)
+
 })
 
 function showButton( name ){
-    current = name
+    if(!name) popup = true
+    else current = name
     anime({
         targets : 'button',
         left : '90vw',
@@ -76,19 +104,27 @@ function showButton( name ){
 }
 
 function hideButton(){
-    if(current != 'null'){
+    if(current != 'null' && !popup){
         init()
     }
-    current = 'null'
-    anime({
-        targets : 'button',
-        left : '115vw',
-        complete: ()=>{
-            if(current == 'null')
-            $('button').hide()
-        },
-        duration: 1000
-    })
+    if(popup){
+        anime({
+            targets : '.popup',
+            left : '150vw'
+        })
+        popup = false
+    }else{
+        current = 'null'
+        anime({
+            targets : 'button',
+            left : '115vw',
+            complete: ()=>{
+                if(current == 'null')
+                $('button').hide()
+            },
+            duration: 1000
+        })
+    }
 }
 
 function init(starting){
@@ -97,21 +133,15 @@ function init(starting){
 
         // PROJECTS
         for(type in projects){
-            const table = $('.projects .'+type)
-            for(const project of projects[type]){
-                table.append(`<tr>
-                    <td class="text-right"> <span class="badge badge-${projectsTypes[project.type]}"> ${project.type} </span> </td>
-                    <td class="hidder"> 
-                        <a href="${project.link}" target="_blank"> ${project.name} </a> 
-                        <div class="hidden">
-                            ${project.used.map(used => {
-                                return `<span class="badge badge-black"> ${used} </span>`
-                            }).join('')} <br>
-                            ${project.desc}
-                        </div>
+            const table = $('.projects .' + type)
+            projects[type].forEach(( project, index ) => {
+                table.append(`<tr class="project-${type}-${index}">
+                    <td class="text-right">
+                        <span class="badge badge-${projectsTypes[project.type]}"> ${project.type} </span>
                     </td>
+                    <td> ${project.name} </td>
                 </tr>`)
-            }
+            })
         }
 
         // INDEXES

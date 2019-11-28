@@ -29,6 +29,7 @@ body {
     --bright : #373737;
     --light : #4b4b4b;
     --light-plus : #585858;
+    --extra-light : #a5a5a5;
     --white : #F0F0F0;
     --none : #00000000;
     --transparent : #f0f0f010;
@@ -50,11 +51,13 @@ body {
 
 h1,h2,h3,h4,.title {
     font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    white-space: nowrap;
 }
 
 h1 { font-size: 20px; }
-h2 { font-size: 20px; text-align: center; }
-h3 { font-size: 18px; padding-top: 20px; color: var(--light-plus);}
+h2 { font-size: 28px; text-shadow: var(--shadow-center); color: var(--extra-light);}
+h3 { font-size: 18px; padding-top: 20px; color: var(--extra-light);}
 h4 { font-size: 16px; }
 
 td {
@@ -63,6 +66,53 @@ td {
 
 .numeric {
     font-family: 'Roboto Mono', monospace;
+}
+
+/* Popup */
+
+.popup {
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 50;
+    left: 150vw;
+    top: 50vh;
+    width: 80vw;
+    height: min-content;
+    max-height: 50vh;
+    background-color: var(--dark);
+    border-radius: 2vw;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow-center);
+}
+.popup p {
+    padding-top: 3vw;
+}
+.popup .preview {
+    width: 90%;
+    height: 50vw;
+    overflow: hidden;
+}
+.popup .preview img {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+/* Hidder / Hidden */
+
+.hidden {
+    display: none;
+    white-space: wrap;
+    text-align: justify;
+}
+.hidder:hover .hidden{
+    display: block;
 }
 
 /* Loader */
@@ -86,8 +136,8 @@ td {
     .loader > div {
         animation: var(--spin);
         border-radius: 50%;
-        border: 2vw solid var(--black); /* Light grey */
-        border-top: 2vw solid var(--light); /* Blue */
+        border: 2vw solid var(--black); 
+        border-top: 2vw solid var(--light); 
         background-color: var(--grey);
         width: 100%;
         height: 100%;
@@ -97,7 +147,7 @@ td {
     font-size: 25px;
     width: min-content;
     height: min-content;
-    color: var(--light-plus);
+    color: var(--extra-light);
 }
 .loader-top,
 .loader-bottom {
@@ -191,7 +241,7 @@ div.to-bottom {
     box-shadow: var(--shadow-top)
 }
 section.to-bottom {
-    bottom: -50vh;
+    bottom: -150vh;
 }
 
 div.footer {
@@ -202,6 +252,11 @@ div.skills {
 }
 div.projects {
     background-color: var(--grey)
+}
+.projects > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Header */
