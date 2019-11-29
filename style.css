@@ -59,7 +59,7 @@ h1,h2,h3,h4,.title {
 
 h1 { font-size: 2.7vh; }
 h2 { font-size: 3.8vh; text-shadow: var(--shadow-center); color: var(--extra-light);}
-h3 { font-size: 2.9vh; padding-top: 3.1vh; color: var(--extra-light);}
+h3 { font-size: 2.9vh; color: var(--extra-light);}
 h4 { font-size: 2.5vh; }
 
 td {

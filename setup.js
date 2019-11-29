@@ -32,15 +32,15 @@ const projects = {
         {
             type : 'site',
             name : 'JS Labs - Website',
-            desc : '',
+            desc : 'Début de site web pour les Laboratoires JS.',
             link : 'https://github.com/CamilleAbella/JS-Labs-Website',
             used : ['PHP','JS','CSS','PGSQL'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-labs-website.PNG'
+            preview : './img/preview-labs-website.PNG'
         },
         {
             type : 'site',
             name : 'JS Labs - Admin Dashboard',
-            desc : '',
+            desc : 'Début d\'interface d\'administration pour les Laboratoires JS',
             link : 'https://github.com/CamilleAbella/LabsAdmin-Dashboard',
             used : ['JS','Express','Bootstrap','PGSQL'],
             preview : ''
@@ -51,7 +51,7 @@ const projects = {
             desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
             link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot',
             used : ['JS','NodeJS','Discord.js','Color Engine'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-unicorn-trap.png'
+            preview : './img/preview-unicorn-trap.png'
         },
         {
             type : 'bot',
@@ -59,7 +59,7 @@ const projects = {
             desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
             link : 'https://top.gg/bot/554108430298775564',
             used : ['JS','NodeJS','Discord.js'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-discord-js.png'
+            preview : './img/preview-discord-js.png'
         },
         {
             type : 'game',
@@ -67,15 +67,15 @@ const projects = {
             desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
             link : 'https://camilleabella.github.io/Gario/',
             used : ['HTML','JS','p5.js'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-gario.png'
+            preview : './img/preview-gario.png'
         },
         {
             type : 'game',
             name : 'Tetris en Canvas',
-            desc : '',
+            desc : 'Petit projet en canvas lors de ma formation à l\'Idem.',
             link : 'https://camilleabella.github.io/TetrisCanvas/',
             used : ['HTML','CSS','JS','Canvas'],
-            preview : ''
+            preview : './img/preview-tetris-canvas.png'
         },
         {
             type : 'lib',
@@ -83,12 +83,12 @@ const projects = {
             desc : 'HTML keyboard typing by ID element.',
             link : 'https://camilleabella.github.io/Typing.js/',
             used : ['JS'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-typing-js.png'
+            preview : './img/preview-typing-js.png'
         },
         {
             type : 'lib',
             name : 'GodEmbed',
-            desc : '',
+            desc : 'Langage de construction d\'embed Discord, technologie de templating.',
             link : 'https://github.com/CamilleAbella/GodEmbed/tree/master/Module',
             used : ['JS','NodeJS'],
             preview : ''
@@ -114,10 +114,10 @@ const projects = {
         {
             type : 'app',
             name : 'Rednit',
-            desc : 'Project ayant gagné la troisième place du <a class="text-info" target="_blank" href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
+            desc : 'Projet ayant gagné la troisième place du <a class="text-info" target="_blank" href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
             link : '#',
             used : ['Python','JS','Rasa','React','PGSQL'],
-            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-rednit.png'
+            preview : './img/preview-rednit.png'
         },
         {
             type : 'site',
