@@ -35,7 +35,7 @@ const projects = {
             desc : '',
             link : 'https://github.com/CamilleAbella/JS-Labs-Website',
             used : ['PHP','JS','CSS','PGSQL'],
-            preview : 'img/preview-labs-website.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-labs-website.PNG'
         },
         {
             type : 'site',
@@ -51,7 +51,7 @@ const projects = {
             desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
             link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot',
             used : ['JS','NodeJS','Discord.js','Color Engine'],
-            preview : 'img/preview-unicorn-trap.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-unicorn-trap.png'
         },
         {
             type : 'bot',
@@ -59,7 +59,7 @@ const projects = {
             desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
             link : 'https://top.gg/bot/554108430298775564',
             used : ['JS','NodeJS','Discord.js'],
-            preview : 'img/preview-discord-js.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-discord-js.png'
         },
         {
             type : 'game',
@@ -67,7 +67,7 @@ const projects = {
             desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
             link : 'https://camilleabella.github.io/Gario/',
             used : ['HTML','JS','p5.js'],
-            preview : 'img/preview-gario.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-gario.png'
         },
         {
             type : 'game',
@@ -83,7 +83,7 @@ const projects = {
             desc : 'HTML keyboard typing by ID element.',
             link : 'https://camilleabella.github.io/Typing.js/',
             used : ['JS'],
-            preview : 'img/preview-typing-js.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-typing-js.png'
         },
         {
             type : 'lib',
@@ -117,7 +117,7 @@ const projects = {
             desc : 'Project ayant gagné la troisième place du <a class="text-info" target="_blank" href="http://communities.techstars.com/france/perpignan/startup-weekend/15095">Startup Weekend Perpignan</a>.',
             link : '#',
             used : ['Python','JS','Rasa','React','PGSQL'],
-            preview : 'img/preview-rednit.png'
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/preview-rednit.png'
         },
         {
             type : 'site',
