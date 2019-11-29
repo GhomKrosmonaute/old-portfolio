@@ -140,12 +140,33 @@ function init(starting){
             projects[type].forEach(( project, index ) => {
                 table.append(`<tr class="project-${type}-${index}">
                     <td class="text-right">
-                        <span class="badge badge-${projectsTypes[project.type]}"> ${project.type} </span>
+                        <span class="badge badge-${typeColors[project.type]}"> ${project.type} </span>
                     </td>
                     <td> ${project.name} </td>
                 </tr>`)
             })
         }
+
+        // SKILLS
+        const table = $('.skills table')
+        competences.forEach(comp => {
+            table.append(`<tr>
+                <td class="text-right">
+                    <span class="badge badge-${typeColors[comp.type]}"> ${comp.type} </span>
+                </td>
+                <td class="text-center" style="
+                    color: ${comp.color};
+                ">
+                    <i class="${comp.icon}"></i>
+                </td>
+                <td class="text-shadow" style="
+                    background-image: linear-gradient(
+                        to left, ${comp.color}, transparent 80%
+                    );
+                    border-radius: 2vw;
+                "> ${comp.name} </td>
+            </tr>`)
+        })
 
         // INDEXES
         const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))

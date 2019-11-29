@@ -23,6 +23,10 @@ html {
 }
 
 body {
+
+    --none :        #00000000;
+    --transparent : #f0f0f010;
+
     --black :       #131313;
     --dark :        #1C1C1C;
     --grey :        #292929;
@@ -31,8 +35,6 @@ body {
     --light-plus :  #585858;
     --extra-light : #a5a5a5;
     --white :       #F0F0F0;
-    --none :        #00000000;
-    --transparent : #f0f0f010;
 
     --indexes-size : 5vw;
     --spin : spin 2s linear infinite;
@@ -49,6 +51,7 @@ body {
     color: var(--white);
     font-family: 'Roboto', sans-serif;
     font-size: 2.1vh;
+
 }
 
 h1,h2,h3,h4,.title {

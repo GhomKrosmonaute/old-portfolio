@@ -11,13 +11,16 @@ function preventMotion(event)
 
 const animes = {}
 var handSequence = null
-const projectsTypes = {
+const typeColors = {
     org : 'warning',
     bot : 'primary',
     app : 'danger',
     lib : 'info',
     game : 'success',
-    site : 'dark'
+    site : 'dark',
+    lang : 'warning',
+    db : 'primary',
+    server : 'success'
 }
 const projects = {
     perso : [
@@ -137,6 +140,103 @@ const projects = {
         }
     ]
 }
+const competences = [
+
+    {
+        type : 'lang',
+        name : 'Javascript',
+        icon : 'fab fa-js',
+        color : '#f7df1e'
+    },
+    {
+        type : 'lang',
+        name : 'HTML',
+        icon : 'fab fa-html5',
+        color : '#F16529'
+    },
+    {
+        type : 'lang',
+        name : 'CSS',
+        icon : 'fab fa-css3-alt',
+        color : '#3C99DC'
+    },
+    {
+        type : 'lang',
+        name : 'PHP',
+        icon : 'fab fa-php',
+        color : '#787CB5'
+    },
+
+    {
+        type : 'db',
+        name : 'MySQL',
+        icon : 'fas fa-database',
+        color : '#00758F'
+    },
+    {
+        type : 'db',
+        name : 'PostgreSQL',
+        icon : 'fas fa-database',
+        color : '#587FAA'
+    },
+    {
+        type : 'db',
+        name : 'MongoDB',
+        icon : 'fas fa-database',
+        color : '#4DB33D'
+    },
+    {
+        type : 'db',
+        name : 'ArangoDB',
+        icon : 'fas fa-database',
+        color : '#2BA747'
+    },
+
+    {
+        type : 'lib',
+        name : 'Discord.js',
+        icon : 'fab fa-discord',
+        color : '#738ADB'
+    },
+    {
+        type : 'lib',
+        name : 'Angular',
+        icon : 'fab fa-angular',
+        color : '#B52E31'
+    },
+    {
+        type : 'lib',
+        name : 'Wordpress',
+        icon : 'fab fa-wordpress-simple',
+        color : '#00749C'
+    },
+    {
+        type : 'lib',
+        name : 'Express.js',
+        icon : 'fab fa-edge',
+        color : '#333333'
+    },
+
+    {
+        type : 'app',
+        name : 'Git',
+        icon : 'fab fa-git-alt',
+        color : '#3E2C00'
+    },
+    {
+        type : 'app',
+        name : 'Docker',
+        icon : 'fab fa-docker',
+        color : '#0db7ed'
+    },
+
+    {
+        type : 'server',
+        name : 'NodeJS',
+        icon : 'fab fa-node-js',
+        color: '#68A063'
+    }
+]
 
 $(()=>{
 
