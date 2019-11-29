@@ -54,7 +54,7 @@ const projects = {
             desc : 'Gestionnaire de dégradés de couleurs pour les rôles dans Discord.',
             link : 'https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot',
             used : ['JS','NodeJS','Discord.js','Color Engine'],
-            preview : './img/preview-unicorn-trap.png'
+            preview : './img/preview-unicorn-trap.PNG'
         },
         {
             type : 'bot',
@@ -62,7 +62,7 @@ const projects = {
             desc : 'Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)',
             link : 'https://top.gg/bot/554108430298775564',
             used : ['JS','NodeJS','Discord.js'],
-            preview : './img/preview-discord-js.png'
+            preview : './img/preview-discord-js.PNG'
         },
         {
             type : 'game',
@@ -86,7 +86,7 @@ const projects = {
             desc : 'HTML keyboard typing by ID element.',
             link : 'https://camilleabella.github.io/Typing.js/',
             used : ['JS'],
-            preview : './img/preview-typing-js.png'
+            preview : './img/preview-typing-js.PNG'
         },
         {
             type : 'lib',
