@@ -11,6 +11,27 @@ function preventMotion(event)
 
 const animes = {}
 var handSequence = null
+
+const contactLinks = [
+    {
+        name : 'LinkedIn',
+        value : 'Camille Abella',
+        link : 'https://www.linkedin.com/in/camille-abella-a99950176/',
+        icon : 'fab fa-linkedin'
+    },
+    {
+        name : 'Discord',
+        value : 'Ghom#9700', 
+        link : 'https://discord.gg/3vC2XWK',
+        icon : 'fab fa-discord'
+    },
+    {
+        name : 'Twitter',
+        value : '@GhomKrosmonaute',
+        link : 'https://twitter.com/GhomKrosmonaute',
+        icon : 'fab fa-twitter-square'
+    }
+]
 const typeColors = {
     org : 'warning',
     bot : 'primary',
@@ -42,7 +63,7 @@ const projects = {
         },
         {
             type : 'site',
-            name : 'JS Labs - Admin Dashboard',
+            name : 'JS Labs - Admin',
             desc : 'Début d\'interface d\'administration pour les Laboratoires JS',
             link : 'https://github.com/CamilleAbella/LabsAdmin-Dashboard',
             used : ['JS','Express','Bootstrap','PGSQL'],
@@ -136,7 +157,7 @@ const projects = {
             desc : 'Projet PHP lors de ma formation WEB à l\'Idem.',
             link : 'https://github.com/CamilleAbella/ERN-WEB-project-1',
             used : ['PHP','CSS','MySQL'],
-            preview : ''
+            preview : './img/preview-toys-r-us.png'
         }
     ]
 }
@@ -391,6 +412,12 @@ $(()=>{
                     targets : '.contact .info',
                     padding: '.5vw 0'
                 })
+                anime({
+                    targets : '.contact .icons',
+                    left : '45vw',
+                    top : '4.5vh',
+                    fontSize: '10vh'
+                })
             },
             focus : ()=>{
                 anime({
@@ -416,11 +443,17 @@ $(()=>{
                     targets : '.contact .info',
                     padding: '2.5vw'
                 })
+                anime({
+                    targets : '.contact .icons',
+                    left : '40vw',
+                    top : '59vh',
+                    fontSize: '30vh'
+                })
             }
         }
 
         const toBottom = {
-            footer : { top : 90, rotate : -10 },
+            footer : { top : 85, rotate : -10 },
             skills : { top : 60, rotate : 15 },
             projects : { top : 40, rotate : -15 },
         }
@@ -433,7 +466,7 @@ $(()=>{
             const params = toBottom[classe]
     
             animes[classe] = {
-                initial : eval(`(starting) => {
+                initial : eval(`starting => {
                     anime({
                         targets : 'div.${classe}',
                         top : '${params.top}vh',
@@ -447,11 +480,20 @@ $(()=>{
                         easing : 'easeInOutBack',
                         delay : starting ? ${delay + 200} : 0
                     })
-                    anime({
-                        targets : 'section.${classe} h2',
-                        translateY : '-45vh',
-                        delay : starting ? ${delay + 200} : 0
-                    })
+                    ${classe == 'projects' || classe == 'footer' ? `
+                        anime({
+                            targets : 'section.${classe} h2',
+                            translateY : '-45vh',
+                            delay : starting ? ${delay + 200} : 0
+                        })
+                    ` : `
+                        anime({
+                            targets : 'section.${classe} h2',
+                            translateY : '-40vh',
+                            delay : starting ? ${delay + 200} : 0
+                        })
+                    `}
+                    
                 }`)
             }
         }

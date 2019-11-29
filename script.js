@@ -130,9 +130,29 @@ function hideButton(){
     }
 }
 
+var contactLinkIndex = 0
+
 function init(starting){
 
     if(starting){
+
+        // CONTACT
+        const icons = $('.contact .icons')
+        setInterval(async () => {
+
+            icons.css('color','transparent')
+
+            await new Promise(resolve => setTimeout(resolve,1500))
+
+            icons.html(`<i class="${contactLinks[contactLinkIndex].icon}"></i>`)
+            icons.css('color','var(--transparent)')
+
+            contactLinkIndex ++
+            if(contactLinkIndex > contactLinks.length - 1)
+            contactLinkIndex = 0
+        },5000)
+
+        
 
         // PROJECTS
         for(type in projects){
@@ -142,7 +162,12 @@ function init(starting){
                     <td class="text-right">
                         <span class="badge badge-${typeColors[project.type]}"> ${project.type} </span>
                     </td>
-                    <td> ${project.name} </td>
+                    <td style="
+                        background-image: linear-gradient(
+                            to left, var(--${typeColors[project.type]}), transparent 70%
+                        );
+                        border-radius: 2vw;
+                    "> ${project.name} </td>
                 </tr>`)
             })
         }
