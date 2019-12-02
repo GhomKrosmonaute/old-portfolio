@@ -15,7 +15,7 @@ $(() => {
         easing: 'linear',
         color: '#000',
         round: 1,
-        duration: 2500,
+        duration: 500,
         update: () => loaderText.html(temp.percent),
         complete: () => {
             loaderText.html('Good')
@@ -136,6 +136,11 @@ function init(starting){
 
     if(starting){
 
+        // INFOS
+        const now = new Date()
+        const naissance = new Date(833061600000)
+        $('.age').html(now.getFullYear()-naissance.getFullYear())
+
         // CONTACT
         const icons = $('.contact .icons')
         setInterval(async () => {
@@ -194,10 +199,10 @@ function init(starting){
         })
 
         // INDEXES
-        const indexCount = Math.ceil($(window).height() / ($(window).width() * .03))
+        const indexCount = Math.ceil($(window).height() / ($(window).width() * (landscape ? 0.02 : 0.05)))
         const indexes = $('.indexes')
         for(var i=0; i<indexCount; i++){
-            indexes.append('<li style="top:' + (i * 5) + 'vw;">' + (i + 1) + '</li>')
+            indexes.append('<li style="top:' + (i * (landscape ? 2 : 5)) + 'vw;">' + (i + 1) + '</li>')
         }
 
         setTimeout(()=>{
@@ -217,21 +222,44 @@ function init(starting){
         }
 
         // LIGHTS
-        anime({
-            targets : '.light.blue',
-            left : '-20vw',
-            top : '150vh',
-            duration : 6000,
-            delay : 1500
-        })
-        anime({
-            targets : '.light.purple',
-            left : '120vw',
-            top : '-50vh',
-            duration : 6000,
-            delay : 1500,
-            complete : ()=>$('.light').hide()
-        })
+        if(landscape){
+            anime({
+                targets : '.light.blue',
+                left : '-20vw',
+                top : '150vh',
+                duration : 6000,
+                delay : 1500,
+                direction: 'alternate',
+                easing : 'easeInOutExpo',
+                loop : true
+            })
+            anime({
+                targets : '.light.purple',
+                left : '120vw',
+                top : '-50vh',
+                duration : 6000,
+                delay : 1500,
+                direction: 'alternate',
+                easing : 'easeInOutExpo',
+                loop : true
+            })
+        }else{
+            anime({
+                targets : '.light.blue',
+                left : '-20vw',
+                top : '150vh',
+                duration : 6000,
+                delay : 1500
+            })
+            anime({
+                targets : '.light.purple',
+                left : '120vw',
+                top : '-50vh',
+                duration : 6000,
+                delay : 1500,
+                complete : ()=>$('.light').hide()
+            })
+        }
 
     }
 

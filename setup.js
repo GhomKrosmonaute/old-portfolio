@@ -11,6 +11,7 @@ function preventMotion(event)
 
 const animes = {}
 var handSequence = null
+var landscape = null
 
 const contactLinks = [
     {
@@ -263,58 +264,157 @@ $(()=>{
 
     const width = $(window).width()
     const height = $(window).height()
+    landscape = width > height
 
-    // WARN
-    if(height < width){
-        $('body').append(`
-            <h1 style="
-                text-align: center;
-                position: absolute;
-                top: 50vh;
-                left: 50vw;
-                width: 50vw;
-                z-index: 50;
-                font-size: 5vh;
-                transform: translate(-50%,-50%);
-            "> 
-                <i class="fas fa-exclamation-circle"></i> <br>
-                Ce site n'est pas encore accessible sur les écrans "paysage". <br>
-                ça arrive très bientôt !
-            </h1>
-        `)
+//=============================================
+//                                             
+//  ###    ###  ##   ##  ##      ######  ##  
+//  ## #  # ##  ##   ##  ##        ##    ##  
+//  ##  ##  ##  ##   ##  ##        ##    ##  
+//  ##      ##  ##   ##  ##        ##    ##  
+//  ##      ##   #####   ######    ##    ##  
+//                                             
+//=============================================
+
+    animes.header = {
+        initial : async starting => {
+            if(starting) 
+            await new Promise(resolve => setTimeout(resolve,500))
+            anime({
+                targets : 'div.header',
+                top : '-90vh'
+            })
+            anime({
+                targets : 'section.header',
+                top : '3vh',
+                delay : 50
+            })
+        }
     }
 
-    if(height > width){
+    const toBottom = {
+        footer : { top : 85, rotate : -10 },
+        skills : { top : 60, rotate : 15 },
+        projects : { top : 40, rotate : -15 },
+    }
 
-//=================================================================
-//                                                                 
-//  ##   ##  #####  #####    ######  ##   ####    ###    ##      
-//  ##   ##  ##     ##  ##     ##    ##  ##      ## ##   ##      
-//  ##   ##  #####  #####      ##    ##  ##     ##   ##  ##      
-//   ## ##   ##     ##  ##     ##    ##  ##     #######  ##      
-//    ###    #####  ##   ##    ##    ##   ####  ##   ##  ######  
-//                                                                 
-//=================================================================
+    var delay = 200
+
+    for(classe in toBottom){
+
+        delay += 200
+        const params = toBottom[classe]
+
+        animes[classe] = {
+            initial : eval(`starting => {
+                anime({
+                    targets : 'div.${classe}',
+                    top : '${params.top}vh',
+                    rotateZ : '${params.rotate}deg',
+                    easing : 'easeInOutBack',
+                    delay : starting ? ${delay} : 0
+                })
+                anime({
+                    targets : 'section.${classe}',
+                    top : '${params.top + 50}vh',
+                    easing : 'easeInOutBack',
+                    delay : starting ? ${delay + 200} : 0
+                })
+                ${classe == 'projects' || classe == 'footer' ? `
+                    anime({
+                        targets : 'section.${classe} h2',
+                        translateY : '-45vh',
+                        delay : starting ? ${delay + 200} : 0
+                    })
+                ` : `
+                    anime({
+                        targets : 'section.${classe} h2',
+                        translateY : '-40vh',
+                        delay : starting ? ${delay + 200} : 0
+                    })
+                `}
+                
+            }`)
+        }
+    }
+
+    const toBottomEntries = Object.entries(toBottom).reverse()
+
+    toBottomEntries.forEach( (entry,index) => {
+
+        const [classe,params] = entry
+        const dessus = toBottomEntries.slice(0,index)
+        const dessous = toBottomEntries.slice(index+1)
+
+        try {
+            animes[classe].focus = eval(`()=>{
+                anime({
+                    targets : 'div.${classe}',
+                    top : '20vh',
+                    duration : 1000,
+                })
+                anime({
+                    targets : 'section.${classe}',
+                    top : '25vh',
+                    duration : 1000,
+                })
+                anime({
+                    targets : 'section.${classe} h2',
+                    translateY : '0'
+                })
+                ${dessus.map(e => {
+                    const [c,p] = e
+                    return `anime({
+                        targets : 'div.${c}',
+                        top : '10vh',
+                        duration : 1000
+                    })
+                    anime({
+                        targets : 'section.${c}',
+                        top : '100vh',
+                        duration : 1000
+                    })`
+                }).join('\n')}
+                ${dessous.map(e => {
+                    const [c,p] = e
+                    return `anime({
+                        targets : 'div.${c}',
+                        top : '100vh',
+                        duration : 1000
+                    })
+                    anime({
+                        targets : 'section.${c}',
+                        top : '110vh',
+                        duration : 1000
+                    })
+                    anime({
+                        targets : 'section.${c} h2',
+                        translateY : '20vh'
+                    })`
+                }).join('\n')}
+            }`)
+        } catch (error) {
+            console.error(error)
+        }
+    })
+
+
+    if(!landscape){
+
+//====================================================================
+//                                                                    
+//  #####    #####   #####    ######  #####      ###    ##  ######  
+//  ##  ##  ##   ##  ##  ##     ##    ##  ##    ## ##   ##    ##    
+//  #####   ##   ##  #####      ##    #####    ##   ##  ##    ##    
+//  ##      ##   ##  ##  ##     ##    ##  ##   #######  ##    ##    
+//  ##       #####   ##   ##    ##    ##   ##  ##   ##  ##    ##    
+//                                                                    
+//====================================================================
+
 
         handSequence = [
             
         ]
-
-        animes.header = {
-            initial : async starting => {
-                if(starting) 
-                await new Promise(resolve => setTimeout(resolve,500))
-                anime({
-                    targets : 'div.header',
-                    top : '-90vh'
-                })
-                anime({
-                    targets : 'section.header',
-                    top : '3vh',
-                    delay : 50
-                })
-            }
-        }
 
         animes.infos = {
             initial : async starting => {
@@ -452,123 +552,183 @@ $(()=>{
             }
         }
 
-        const toBottom = {
-            footer : { top : 85, rotate : -10 },
-            skills : { top : 60, rotate : 15 },
-            projects : { top : 40, rotate : -15 },
-        }
-
-        var delay = 200
-
-        for(classe in toBottom){
-        
-            delay += 200
-            const params = toBottom[classe]
-    
-            animes[classe] = {
-                initial : eval(`starting => {
-                    anime({
-                        targets : 'div.${classe}',
-                        top : '${params.top}vh',
-                        rotateZ : '${params.rotate}deg',
-                        easing : 'easeInOutBack',
-                        delay : starting ? ${delay} : 0
-                    })
-                    anime({
-                        targets : 'section.${classe}',
-                        top : '${params.top + 50}vh',
-                        easing : 'easeInOutBack',
-                        delay : starting ? ${delay + 200} : 0
-                    })
-                    ${classe == 'projects' || classe == 'footer' ? `
-                        anime({
-                            targets : 'section.${classe} h2',
-                            translateY : '-45vh',
-                            delay : starting ? ${delay + 200} : 0
-                        })
-                    ` : `
-                        anime({
-                            targets : 'section.${classe} h2',
-                            translateY : '-40vh',
-                            delay : starting ? ${delay + 200} : 0
-                        })
-                    `}
-                    
-                }`)
-            }
-        }
-
-        const toBottomEntries = Object.entries(toBottom).reverse()
-
-        toBottomEntries.forEach( (entry,index) => {
-
-            const [classe,params] = entry
-            const dessus = toBottomEntries.slice(0,index)
-            const dessous = toBottomEntries.slice(index+1)
-
-            try {
-                animes[classe].focus = eval(`()=>{
-                    anime({
-                        targets : 'div.${classe}',
-                        top : '20vh',
-                        duration : 1000,
-                    })
-                    anime({
-                        targets : 'section.${classe}',
-                        top : '25vh',
-                        duration : 1000,
-                    })
-                    anime({
-                        targets : 'section.${classe} h2',
-                        translateY : '0'
-                    })
-                    ${dessus.map(e => {
-                        const [c,p] = e
-                        return `anime({
-                            targets : 'div.${c}',
-                            top : '10vh',
-                            duration : 1000
-                        })
-                        anime({
-                            targets : 'section.${c}',
-                            top : '100vh',
-                            duration : 1000
-                        })`
-                    }).join('\n')}
-                    ${dessous.map(e => {
-                        const [c,p] = e
-                        return `anime({
-                            targets : 'div.${c}',
-                            top : '100vh',
-                            duration : 1000
-                        })
-                        anime({
-                            targets : 'section.${c}',
-                            top : '110vh',
-                            duration : 1000
-                        })
-                        anime({
-                            targets : 'section.${c} h2',
-                            translateY : '20vh'
-                        })`
-                    }).join('\n')}
-                }`)
-            } catch (error) {
-                console.error(error)
-            }
-        })
-
     }else{
 
-//========================================================================================
-//                                                                                        
-//  ##   ##   #####   #####    ##  ######   #####   ##     ##  ######    ###    ##      
-//  ##   ##  ##   ##  ##  ##   ##     ##   ##   ##  ####   ##    ##     ## ##   ##      
-//  #######  ##   ##  #####    ##    ##    ##   ##  ##  ## ##    ##    ##   ##  ##      
-//  ##   ##  ##   ##  ##  ##   ##   ##     ##   ##  ##    ###    ##    #######  ##      
-//  ##   ##   #####   ##   ##  ##  ######   #####   ##     ##    ##    ##   ##  ######  
-//                                                                                        
-//========================================================================================
+//==============================================================================
+//                                                                              
+//  ##        ###    ##     ##  ####     ####   ####    ###    #####   #####  
+//  ##       ## ##   ####   ##  ##  ##  ##     ##      ## ##   ##  ##  ##     
+//  ##      ##   ##  ##  ## ##  ##  ##   ###   ##     ##   ##  #####   #####  
+//  ##      #######  ##    ###  ##  ##     ##  ##     #######  ##      ##     
+//  ######  ##   ##  ##     ##  ####    ####    ####  ##   ##  ##      #####  
+//                                                                              
+//==============================================================================
 
+
+        handSequence = [
+                    
+        ]
+
+        /**
+         * INFOS
+         */
+
+        animes.infos = {
+            initial : async starting => {
+                if(starting) 
+                await new Promise(resolve => setTimeout(resolve,500))
+                anime({
+                    targets : '.infos',
+                    top: '18vh',
+                    easing : 'easeInOutBack',
+                    zIndex: {
+                        value: 11,
+                        round: true
+                    },
+                    duration : 1000
+                })
+                anime({
+                    targets : 'div.infos',
+                    height: '10vh',
+                    width: '30vw',
+                    left : '50vw',
+                    easing : 'easeInOutBack',
+                    duration : 1000
+                })
+                anime({
+                    targets : 'div.infos img',
+                    rotateZ : '360deg',
+                    easing : 'easeInOutBack',
+                    duration : 1000
+                })
+                anime({
+                    targets : 'section.infos',
+                    left : '60vw',
+                    fontSize: '1.9vh',
+                    height: '8vh',
+                    width: '30vw',
+                    easing : 'easeInOutBack',
+                    delay : 100,
+                    duration : 1000
+                })
+                anime({
+                    targets : 'section.infos .bio',
+                    easing : 'easeInOutBack',
+                    height : '0',
+                    width: '0',
+                    duration: 1000
+                })
+            },
+            focus : ()=>{
+                anime({
+                    targets : '.infos',
+                    fontSize: '2.5vh',
+                    left : '52vw',
+                    top : '55vh',
+                    width : '50vw',
+                    height: '50vh',
+                    zIndex: {
+                        value: 10,
+                        round: true
+                    },
+                    duration: 1000
+                })
+                anime({
+                    targets : 'section.infos',
+                    left: '50vw',
+                    width: '30vw',
+                    duration: 1000
+                })
+                anime({
+                    targets : 'section.infos .bio',
+                    easing : 'easeInOutBack',
+                    height : '40vh',
+                    width: '45vw',
+                    duration: 1000
+                })
+            }
+        }
+
+        /**
+         * CONTACT
+         */
+
+        animes.contact = {
+            initial : async starting => {
+                if(starting) 
+                await new Promise(resolve => setTimeout(resolve,500))
+                anime({
+                    targets : '.contact',
+                    left : '30vw',
+                    top : '32vh',
+                    zIndex: {
+                        value: 1,
+                        round: true
+                    }
+                })
+                anime({
+                    targets : 'div.contact',
+                    height: '15vh',
+                    width: '25vw',
+                })
+                anime({
+                    targets : 'section.contact',
+                    padding: '0',
+                    fontSize: '1.2vh',
+                    top: '30vh',
+                    height: '7vh',
+                    width: '25vw',
+                    delay : 100
+                })
+                anime({
+                    targets : '.contact .icon',
+                    fontSize: '1.5vh',
+                    minWidth: '5vw'
+                })
+                anime({
+                    targets : '.contact .info',
+                    padding: '.4vw 0'
+                })
+                anime({
+                    targets : '.contact .icons',
+                    left : '21.4vw',
+                    top : '6vh',
+                    fontSize: '10vh'
+                })
+            },
+            focus : ()=>{
+                anime({
+                    targets : '.contact',
+                    padding: '2vh',
+                    fontSize: '2.3vh',
+                    left : '52vw',
+                    top : '55vh',
+                    width : '50vw',
+                    height: '50vh',
+                    zIndex: {
+                        value: 12,
+                        round: true
+                    },
+                    duration: 1000
+                })
+                anime({
+                    targets : '.contact .icon',
+                    fontSize: '2.5vh',
+                    minWidth: '4vw'
+                })
+                anime({
+                    targets : '.contact .info',
+                    padding: '1vw'
+                })
+                anime({
+                    targets : '.contact .icons',
+                    left : '25vw',
+                    top : '37vh',
+                    fontSize: '20vh'
+                })
+            }
+        }
+
+        
     }
 })
