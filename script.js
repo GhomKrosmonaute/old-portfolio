@@ -15,7 +15,7 @@ $(() => {
         easing: 'linear',
         color: '#000',
         round: 1,
-        duration: 500,
+        duration: 1000,
         update: () => loaderText.html(temp.percent),
         complete: () => {
             loaderText.html('Good')
@@ -43,13 +43,6 @@ $(() => {
         hideButton()
     })
 
-    $('.infos').click(()=>{
-        if(current != 'null' && current != 'infos'){
-            animes[current].initial()
-            animes.infos.focus()
-        }
-    })
-
     for(classe in animes){
         const element = animes[classe]
         if(element.focus){
@@ -61,6 +54,13 @@ $(() => {
             }`))
         }
     }
+
+    $('.infos').click(()=>{
+        if(current != 'null' && current != 'infos' && !popup){
+            animes[current].initial()
+            animes.infos.focus()
+        }
+    })
 
     setTimeout(()=>{
         for(type in projects){
@@ -81,14 +81,16 @@ $(() => {
                         \`)
                         anime({
                             targets : '.popup',
-                            left : '50vw'
+                            left : '50vw',
+                            easing : 'easeInOutBack',
+                            duration : 600
                         })
                         showButton()
                     }`)
                 )
             })
         }
-    },5000)
+    },4000)
 
 })
 
@@ -113,7 +115,9 @@ function hideButton(){
     if(popup){
         anime({
             targets : '.popup',
-            left : '150vw'
+            left : '150vw',
+            easing : 'easeInOutBack',
+            duration : 1000
         })
         popup = false
     }else{
