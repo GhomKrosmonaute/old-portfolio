@@ -168,7 +168,7 @@ td {
 /* Lights */
 
 .light {
-    pointer-events:none;
+    pointer-events: none;
     overflow: visible;
     color: var(--none);
     background-color: var(--none);
@@ -398,6 +398,10 @@ section.contact {
         text-shadow: none;
     }
 
+/* Side code */
+
+.side-code { display: none; }
+
 /* 
 //==============================================================================
 //                                                                              
@@ -463,5 +467,21 @@ section.contact {
     .indexes li {
         height: 2vw;
     }
+
+/* Side code */
+
+.side-code {
+    z-index: 1;
+    display: block;
+    top: 9.5vh;
+    left: -25vw;
+    width: 25vw;
+    overflow: hidden;
+    pointer-events: none;
+    background-image: url("img/side-code-50-lines.png");
+    background-repeat: no-repeat;
+    background-size: calc(2vw * 12.5977) calc(2vw * 46);
+    background-blend-mode: lighten;
+}
 
 }/*END of landscape*/

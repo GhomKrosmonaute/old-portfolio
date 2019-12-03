@@ -9,10 +9,9 @@ function preventMotion(event)
     event.stopPropagation();
 }
 
-const animes = {}
-var handSequence = null
-var landscape = null
+var handSequence, landscape, width, height
 
+const animes = {}
 const contactLinks = [
     {
         name : 'LinkedIn',
@@ -262,8 +261,8 @@ const competences = [
 
 $(()=>{
 
-    const width = $(window).width()
-    const height = $(window).height()
+    width = $(window).width()
+    height = $(window).height()
     landscape = width > height
 
 //=============================================
@@ -603,10 +602,10 @@ $(()=>{
                 })
                 anime({
                     targets : 'section.infos',
-                    left : '60vw',
+                    left : '55vw',
                     fontSize: '1.9vh',
                     height: '8vh',
-                    width: '30vw',
+                    width: '20vw',
                     easing : 'easeInOutBack',
                     delay : 100,
                     duration : 1000

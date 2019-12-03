@@ -202,7 +202,7 @@ function init(starting){
             </tr>`)
         })
 
-        // INDEXES
+        // INDEXES & SIDE CODE
         const indexCount = Math.ceil($(window).height() / ($(window).width() * (landscape ? 0.02 : 0.05)))
         const indexes = $('.indexes')
         for(var i=0; i<indexCount; i++){
@@ -215,6 +215,13 @@ function init(starting){
                 left: 0,
                 delay: anime.stagger(10)
             });
+            if(landscape){
+                anime({
+                    targets : '.side-code',
+                    left: '0',
+                    delay: 500
+                })
+            }
         },1500)
 
         // HAND
