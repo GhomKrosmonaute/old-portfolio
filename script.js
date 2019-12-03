@@ -68,7 +68,7 @@ $(() => {
                 $(`.project-${type}-${index}`).click(
                     eval(`()=>{
                         $('.popup').html(\`
-                            <a href="${project.link}" target="_blank"> <h3> ${project.name} </h3> </a>
+                            <a href="${project.link}" target="_blank"> <h3> <i class="fas fa-paperclip"></i> ${project.name} </h3> </a>
                             <span> ${project.used.map(used=>`<span class="badge badge-secondary"> ${used} </span>`).join(' ')} </span>
                             <p> ${project.desc} </p>
                             ${project.preview ? `

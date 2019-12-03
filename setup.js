@@ -103,6 +103,14 @@ const projects = {
         },
         {
             type : 'lib',
+            name : 'Windows.js',
+            desc : 'Un gestionnaire de fenêtres à l\'intérieur de votre site !',
+            link : 'https://camilleabella.github.io/Windows.js/',
+            used : ['JS','CSS'],
+            preview : './img/preview-windows-js.png'
+        },
+        {
+            type : 'lib',
             name : 'Typing.js',
             desc : 'HTML keyboard typing by ID element.',
             link : 'https://camilleabella.github.io/Typing.js/',
