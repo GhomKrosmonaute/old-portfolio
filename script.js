@@ -203,13 +203,20 @@ function init(starting){
         })
 
         // INDEXES & SIDE CODE
+        const regex = new RegExp(ghomLetters.join('|'),'gi')
         const indexCount = Math.ceil($(window).height() / ($(window).width() * (landscape ? 0.015 : 0.05)))
         const indexes = $('.indexes')
         const sideCodeElement = $('.side-code')
         for(var i=0; i<indexCount; i++){
             indexes.append('<li style="top:' + (i * (landscape ? 1.5 : 5)) + 'vw;">' + (i + 1) + '</li>')
-            if(landscape){
-                sideCodeElement.append('<li style="top:' + (i * (landscape ? 1.5 : 5)) + 'vw;"><pre>' + sideCode[i] + '</pre></li>')
+            if(landscape && i < sideCode.length){
+                sideCodeElement.append(`
+                    <li style="top:${ i * (landscape ? 1.5 : 5) }vw;">
+                        <pre>${sideCode[i].replace(regex, m => {
+                            return `<span class="ghom-letter-${m.toLowerCase()}">${m}</span>`
+                        })}</pre>
+                    </li>
+                `)
             }
         }
 
@@ -221,10 +228,14 @@ function init(starting){
             });
             if(landscape){
                 anime({
-                    targets : '.side-code, .side-code > li',
+                    targets : '.side-code > li',
                     left: '2vw',
                     delay: anime.stagger(50)
                 })
+                setInterval(()=>{
+                    const letter = ghomLetters[Math.floor(Math.random()*ghomLetters.length)]
+                    $(`.ghom-letter-${letter}`).toggleClass('highlight')
+                },100)
             }
         },1500)
 

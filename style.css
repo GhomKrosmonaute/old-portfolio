@@ -7,6 +7,7 @@
 :root {
     --none :        transparent;
     --transparent : #f0f0f010;
+    --glass :       #f0f0f033;
 
     --black :       #131313;
     --dark :        #1C1C1C;
@@ -77,6 +78,10 @@ td {
 
 .numeric {
     font-family: 'Roboto Mono', monospace;
+}
+
+.highlight {
+    color: var(--glass);
 }
 
 /* Popup */
@@ -183,13 +188,13 @@ td {
     width: 200vw;
     top: -50vh;
     left: -20vw;
-    background-image: radial-gradient(#ffc82f15,#ffffff00,#ffffff00);
+    background-image: radial-gradient(#2fa1ff15,#ffffff00,#ffffff00);
 }
 .light.purple {
     width: 200vw;
     top: 150vh;
     left: 120vw;
-    background-image: radial-gradient(#2ff8ff13,#ffffff00,#ffffff00);
+    background-image: radial-gradient(#2fffaf13,#ffffff00,#ffffff00);
 }
 
 /* Hand touch tuto */
@@ -485,6 +490,9 @@ section.contact {
     pointer-events: none;
     font-size: .7vw;
     color: #f0f0f018;
+}
+.side-code pre span {
+    transition: color 500ms;
 }
 
 }/*END of LANDSCAPE media query*/

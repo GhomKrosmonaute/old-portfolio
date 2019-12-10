@@ -11,6 +11,7 @@ function preventMotion(event)
 
 var handSequence, landscape, width, height
 
+const ghomLetters = 'ghomcasei'.split('')
 const animes = {}
 const contactLinks = [
     {
