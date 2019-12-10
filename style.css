@@ -4,6 +4,25 @@
     100% { transform: rotate(360deg); }
 }
 
+:root {
+    --none :        transparent;
+    --transparent : #f0f0f010;
+
+    --black :       #131313;
+    --dark :        #1C1C1C;
+    --grey :        #292929;
+    --bright :      #373737;
+    --light :       #4b4b4b;
+    --light-plus :  #585858;
+    --extra-light : #a5a5a5;
+    --white :       #F0F0F0;
+
+    --spin : spin 2s linear infinite;
+    --shadow-center : 0 0 2vh #0000004b;
+    --shadow-top : 0 -1vh 2vh #00000041;
+    --shadow-bottom : 0 1vh 2vh #00000041;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,24 +43,6 @@ html {
 }
 
 body {
-
-    --none :        transparent;
-    --transparent : #f0f0f010;
-
-    --black :       #131313;
-    --dark :        #1C1C1C;
-    --grey :        #292929;
-    --bright :      #373737;
-    --light :       #4b4b4b;
-    --light-plus :  #585858;
-    --extra-light : #a5a5a5;
-    --white :       #F0F0F0;
-
-    --spin : spin 2s linear infinite;
-    --shadow-center : 0 0 2vh #0000004b;
-    --shadow-top : 0 -1vh 2vh #00000041;
-    --shadow-bottom : 0 1vh 2vh #00000041;
-
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -398,10 +399,6 @@ section.contact {
         text-shadow: none;
     }
 
-/* Side code */
-
-.side-code { display: none; }
-
 /* 
 //==============================================================================
 //                                                                              
@@ -460,28 +457,34 @@ section.contact {
 /* Indexes */
 
 .indexes {
-    width: 2vw;
+    pointer-events: none;
+    width: 1.5vw;
     color: var(--black);
-    font-size: 1.2vw;
+    font-size: .7vw;
 }
     .indexes li {
-        height: 2vw;
+        pointer-events: none;
+        height: 1.5vw;
     }
 
 /* Side code */
 
-.side-code {
-    z-index: 1;
-    display: block;
-    top: 9.5vh;
-    left: -25vw;
-    width: 25vw;
+.side-code li {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    width: 35vw;
+    height: 1.5vw;
+    z-index: 2;
+    left: -100vw;
+    transform: translateY(10vh);
+    text-shadow: none;
+}
+.side-code pre {
     overflow: hidden;
     pointer-events: none;
-    background-image: url("img/side-code-50-lines.png");
-    background-repeat: no-repeat;
-    background-size: calc(2vw * 12.5977) calc(2vw * 46);
-    background-blend-mode: lighten;
+    font-size: .7vw;
+    color: #f0f0f018;
 }
 
-}/*END of landscape*/
+}/*END of LANDSCAPE media query*/

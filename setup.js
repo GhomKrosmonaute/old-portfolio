@@ -266,6 +266,55 @@ const competences = [
         color: '#68A063'
     }
 ]
+const sideCode = `// Getters
+get x(){
+    if(this.parent)
+    return this.parent.x + this._x
+    return this._x
+}
+get y(){
+    if(this.parent)
+    return this.parent.y + this._y
+    return this._y
+}
+get scale(){
+    if(this.parent)
+    return this.parent.scale * this._scale
+    return this._scale
+}
+get width()     { return this._width * this.scale }
+get height()    { return this._height * this.scale }
+get left()      { return this.x - this.width / 2 }
+get right()     { return this.x + this.width / 2 }
+get top()       { return this.y - this.height / 2 }
+get bottom()    { return this.y + this.height / 2 }
+
+// Functions
+reset(){ 
+    for(const reset of this.resets) reset() 
+    if(this.children) for(const child of this.children) child.reset()
+}
+move( x, y ){
+    this._x += x
+    this._y += y
+}
+place( x, y ){
+    this._x = x
+    this._y = y
+}
+scale( scale ){
+    this._scale = scale
+}
+draw(){
+    if(this.isDraw && this.onDraw){
+        this.onDraw()
+        this.debug()
+    }
+}
+debug(){
+    if(this.isDebug && this.onDebug)
+    this.onDebug()
+}`.split('\n')
 
 $(()=>{
 

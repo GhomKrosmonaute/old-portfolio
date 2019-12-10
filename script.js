@@ -203,10 +203,14 @@ function init(starting){
         })
 
         // INDEXES & SIDE CODE
-        const indexCount = Math.ceil($(window).height() / ($(window).width() * (landscape ? 0.02 : 0.05)))
+        const indexCount = Math.ceil($(window).height() / ($(window).width() * (landscape ? 0.015 : 0.05)))
         const indexes = $('.indexes')
+        const sideCodeElement = $('.side-code')
         for(var i=0; i<indexCount; i++){
-            indexes.append('<li style="top:' + (i * (landscape ? 2 : 5)) + 'vw;">' + (i + 1) + '</li>')
+            indexes.append('<li style="top:' + (i * (landscape ? 1.5 : 5)) + 'vw;">' + (i + 1) + '</li>')
+            if(landscape){
+                sideCodeElement.append('<li style="top:' + (i * (landscape ? 1.5 : 5)) + 'vw;"><pre>' + sideCode[i] + '</pre></li>')
+            }
         }
 
         setTimeout(()=>{
@@ -217,9 +221,9 @@ function init(starting){
             });
             if(landscape){
                 anime({
-                    targets : '.side-code',
-                    left: '0',
-                    delay: 500
+                    targets : '.side-code, .side-code > li',
+                    left: '2vw',
+                    delay: anime.stagger(50)
                 })
             }
         },1500)
