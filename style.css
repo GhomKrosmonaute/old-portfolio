@@ -321,6 +321,17 @@ div.infos {
         overflow: hidden;
         border-radius: 50%;
     }
+    div.infos img.photo {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        opacity: 0%;
+        transition: opacity 1s ease;
+    }
+    div.infos img.photo:hover {
+        opacity: 100%;
+    }
 section.infos {
     font-size: 1.9vh;
     height: 8vh;
