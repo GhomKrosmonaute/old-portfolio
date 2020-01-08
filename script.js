@@ -167,39 +167,72 @@ function init(starting){
         for(type in projects){
             const table = $('.projects .' + type)
             projects[type].forEach(( project, index ) => {
-                table.append(`<tr class="project-${type}-${index}">
-                    <td class="text-right">
-                        <span class="badge badge-${typeColors[project.type]}"> ${project.type} </span>
-                    </td>
-                    <td style="
-                        background-image: linear-gradient(
-                            to left, var(--${typeColors[project.type]}), transparent 70%
-                        );
-                        border-radius: 2vw;
-                    "> ${project.name} </td>
-                </tr>`)
+                table.append(`
+                    <tr class="project-${type}-${index}">
+                        <td class="text-right">
+                            <span class="badge badge-${typeColors[project.type]}"> ${project.type} </span>
+                        </td>
+                        <td style="
+                            background-image: linear-gradient(
+                                to left, var(--${typeColors[project.type]}), transparent 70%
+                            );
+                            border-radius: 2vw;
+                        "> ${project.name} </td>
+                    </tr>
+                `)
             })
         }
 
         // SKILLS
-        const table = $('.skills table')
+        let table = $('.skills table')
         competences.forEach(comp => {
-            table.append(`<tr>
-                <td class="text-right">
-                    <span class="badge badge-${typeColors[comp.type]}"> ${comp.type} </span>
-                </td>
-                <td class="text-center" style="
-                    color: ${comp.color};
-                ">
-                    <i class="${comp.icon}"></i>
-                </td>
-                <td class="text-shadow" style="
+            table.append(`
+                <tr>
+                    <td class="text-right">
+                        <span class="badge badge-${typeColors[comp.type]}"> ${comp.type} </span>
+                    </td>
+                    <td class="text-center" style="
+                        color: ${comp.color};
+                    ">
+                        <i class="${comp.icon}"></i>
+                    </td>
+                    <td class="text-shadow" style="
+                        background-image: linear-gradient(
+                            to left, ${comp.color}, transparent 80%
+                        );
+                        border-radius: 2vw;
+                    "> ${comp.name} </td>
+                </tr>
+            `)
+        })
+
+        // PARCOURS
+        let switcher = false
+        table = $('.footer table')
+        parcours.sort((a,b) => {
+            return moment(a.duration[0], "YYYYMMDD").format('x') - moment(b.duration[0], "YYYYMMDD").format('x')
+        }).forEach(one => {
+            switcher = !switcher
+            const toShow = `
+                <td class="p-1 m-1" rowspan="2" style="
                     background-image: linear-gradient(
-                        to left, ${comp.color}, transparent 80%
+                        to ${switcher ? 'left' : 'right'}, var(--${typeColors[one.type]}), transparent 50%
                     );
                     border-radius: 2vw;
-                "> ${comp.name} </td>
-            </tr>`)
+                ">
+                    <h3 class="text-${!switcher ? 'left' : 'right'}"> ${one.name} </h3>
+                    <h4 class="text-${!switcher ? 'left' : 'right'}"> ${one.place} </h4>
+                    <p class="text-${!switcher ? 'left' : 'right'}"> ${one.description} </p>
+                    <h5 class="text-${!switcher ? 'left' : 'right'}"> ${moment(one.duration[0], "YYYYMMDD").fromNow()} pendant ${moment(one.duration[0], "YYYYMMDD").from(one.duration[1], "YYYYMMDD")} </h5>
+                </td>
+            `
+            table.append(`
+                <tr>
+                    ${switcher ? toShow : ''} 
+                    <td class="middle-bar"> <span class="badge badge-${typeColors[one.type]}"> ${one.type} </span> </td>
+                    ${!switcher ? toShow : ''}
+                </tr>
+            `)
         })
 
         // INDEXES & SIDE CODE

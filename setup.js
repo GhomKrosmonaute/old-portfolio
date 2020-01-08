@@ -55,7 +55,7 @@ const parcours = [
         name : 'Formation développeur WEB fullstack & APPs mobile',
         place : 'Ecole Régionale du Numérique - Le Soler',
         description : 'Formation qualifiante et qualitative, j\'y suis encore.',
-        duration : ['20190909','now']
+        duration : ['20190909']
     }
 ]
 const contactLinks = [
