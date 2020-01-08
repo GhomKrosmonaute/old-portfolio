@@ -1,4 +1,5 @@
 
+moment.locale('fr')
 window.addEventListener("scroll", preventMotion, false);
 window.addEventListener("touchmove", preventMotion, false);
 
@@ -13,6 +14,50 @@ var handSequence, landscape, width, height
 
 const ghomLetters = 'ghomcasei'.split('')
 const animes = {}
+const parcours = [
+    {
+        type : 'schooling',
+        name : 'Période de collège',
+        place : 'Gustave Violet - Prades',
+        description : 'Collège de la 6ème à la 4ème sans brevet.',
+        duration : ['20080902','20120702']
+    },
+    {
+        type : 'working',
+        name : 'Jobs saisonniers',
+        place : 'Prades, Vinça, Rhodes',
+        description : 'Les saisons fruitières autour de Prades.',
+        duration : ['20120101','20150101']
+    },
+    {
+        type : 'sabbath',
+        name : 'Période sabbatique',
+        place : 'Vinça',
+        description : 'Période durant laquelle j\'ai pu m\'améliorrer au code.',
+        duration : ['20150101','20190526']
+    },
+    {
+        type : 'training',
+        name : 'Formation WEB & WEB design',
+        place : 'L\'idem - Creative Art School - Le Soler',
+        description : 'Formation "projet PRO" d\'insertion dans le cursus profesionnel.',
+        duration : ['20190527','20190829']
+    },
+    {
+        type : 'internship',
+        name : 'Stage en agence Wordpress',
+        place : 'Agence Point Com - Perpignan',
+        description : 'J\'y ai rencontré des gens supers.',
+        duration : ['20190801','20190830']
+    },
+    {
+        type : 'training',
+        name : 'Formation développeur WEB fullstack & APPs mobile',
+        place : 'Ecole Régionale du Numérique - Le Soler',
+        description : 'Formation qualifiante et qualitative, j\'y suis encore.',
+        duration : ['20190909','now']
+    }
+]
 const contactLinks = [
     {
         name : 'LinkedIn',
@@ -42,7 +87,12 @@ const typeColors = {
     site : 'dark',
     lang : 'warning',
     db : 'primary',
-    server : 'success'
+    server : 'success',
+    internship : 'success',
+    training : 'primary',
+    schooling : 'warning',
+    working : 'danger',
+    sabbath : 'dark'
 }
 const projects = {
     perso : [
