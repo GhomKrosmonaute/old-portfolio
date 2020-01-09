@@ -391,6 +391,36 @@ section.contact {
         transition: color 1000ms;
     }
 
+.parcours {
+    padding: 1.2vh 2vh;
+    border-radius: 1vh;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    margin: -4vh 2vh;
+}
+
+.parcours .head {
+    font-size: 2.7vh;
+    padding: 2vh 0;
+}
+
+.parcours.left {
+    text-align: right;
+}
+
+.parcours.left {
+    border-right-width: 2px;
+    border-right-style: solid;
+    left: -50%;
+}
+
+.parcours.right {
+    border-left-width: 2px;
+    border-left-style: solid;
+    left: 50%;
+}
+
 /* Indexes */
 
 .indexes {

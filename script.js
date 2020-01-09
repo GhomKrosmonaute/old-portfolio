@@ -207,31 +207,22 @@ function init(starting){
         })
 
         // PARCOURS
-        let switcher = false
-        table = $('.footer table')
+        let switcher = true
+        div = $('.footer > div')
         parcours.sort((a,b) => {
             return moment(a.duration[0], "YYYYMMDD").format('x') - moment(b.duration[0], "YYYYMMDD").format('x')
         }).forEach(one => {
             switcher = !switcher
-            const toShow = `
-                <td class="p-1 m-1" rowspan="2" style="
-                    background-image: linear-gradient(
-                        to ${switcher ? 'left' : 'right'}, var(--${typeColors[one.type]}), transparent 50%
-                    );
-                    border-radius: 2vw;
-                ">
-                    <h3 class="text-${!switcher ? 'left' : 'right'}"> ${one.name} </h3>
-                    <h4 class="text-${!switcher ? 'left' : 'right'}"> ${one.place} </h4>
-                    <p class="text-${!switcher ? 'left' : 'right'}"> ${one.description} </p>
-                    <h5 class="text-${!switcher ? 'left' : 'right'}"> ${moment(one.duration[0], "YYYYMMDD").fromNow()} pendant ${moment(one.duration[0], "YYYYMMDD").from(one.duration[1], "YYYYMMDD")} </h5>
-                </td>
-            `
-            table.append(`
-                <tr>
-                    ${switcher ? toShow : ''} 
-                    <td class="middle-bar"> <span class="badge badge-${typeColors[one.type]}"> ${one.type} </span> </td>
-                    ${!switcher ? toShow : ''}
-                </tr>
+            div.append(`
+                <div class="${switcher ? 'left' : 'right'} parcours" style="border-color: var(--${typeColors[one.type]})">
+                    <span class="head"> ${one.name} </span>
+                    <div class="text-muted">
+                        <span> ${moment(one.duration[0], 'YYYYMMDD').fromNow()}, </span>
+                        <span> ${one.place}, </span>
+                        <span> pendant ${moment(one.duration[0], 'YYYYMMDD').from(one.duration[1], 'YYYYMMDD')} </span>
+                    </div>
+                    <div> ${one.description} </div>
+                </div>
             `)
         })
 
