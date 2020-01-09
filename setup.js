@@ -92,7 +92,7 @@ const typeColors = {
     training : 'primary',
     schooling : 'warning',
     working : 'danger',
-    sabbath : 'dark'
+    sabbath : 'light'
 }
 const projects = {
     perso : [
