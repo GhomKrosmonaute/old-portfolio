@@ -625,6 +625,7 @@ $(()=>{
                     top : '4.5vh',
                     fontSize: '10vh'
                 })
+                $('.contact .hidden').hide()
             },
             focus : ()=>{
                 anime({
@@ -656,6 +657,7 @@ $(()=>{
                     top : '59vh',
                     fontSize: '30vh'
                 })
+                $('.contact .hidden').show()
             }
         }
 
@@ -793,15 +795,16 @@ $(()=>{
                     minWidth: '5vw'
                 })
                 anime({
-                    targets : '.contact .info',
-                    padding: '.4vw 0'
-                })
-                anime({
                     targets : '.contact .icons',
                     left : '21.4vw',
                     top : '6vh',
                     fontSize: '10vh'
                 })
+                anime({
+                    targets : '.contact .info',
+                    padding: '.3vw 0'
+                })
+                $('.contact .hidden').hide()
             },
             focus : ()=>{
                 anime({
@@ -825,7 +828,7 @@ $(()=>{
                 })
                 anime({
                     targets : '.contact .info',
-                    padding: '1vw'
+                    padding: '.2vw'
                 })
                 anime({
                     targets : '.contact .icons',
@@ -833,6 +836,7 @@ $(()=>{
                     top : '37vh',
                     fontSize: '20vh'
                 })
+                $('.contact .hidden').show()
             }
         }
 

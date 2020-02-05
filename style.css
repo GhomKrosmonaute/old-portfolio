@@ -378,6 +378,10 @@ section.contact {
     }
     section.contact .info {
         padding: .5vw 0;
+        color: var(--extra-light);
+    }
+    section.contact .info:hover {
+        color: var(--white);
     }
     .contact .icons {
         transform: translate(-50%,-50%);
@@ -389,6 +393,9 @@ section.contact {
         text-align: center;
         color: var(--light);
         transition: color 1000ms;
+    }
+    .contact .hidden {
+        display: none;
     }
 
 /* Footer / Parcours */
