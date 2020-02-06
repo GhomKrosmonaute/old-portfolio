@@ -85,6 +85,7 @@ const typeColors = {
     lib : 'info',
     game : 'success',
     site : 'dark',
+    api : 'light',
     lang : 'warning',
     db : 'primary',
     server : 'success',
@@ -105,6 +106,14 @@ const projects = {
             preview : 'https://cdn.discordapp.com/icons/507389389098188820/a_41f9f826abc393e3d781634da4eefa0b.gif'
         },
         {
+            type : 'api',
+            name : 'Statme',
+            desc : 'Api de statistiques d\'activité sur Discord.',
+            link : 'http://statme-api.tk/',
+            used : ['JS','Discord.js','Express','MySQL'],
+            preview : './img/preview-statme-api.png'
+        },
+        {
             type : 'site',
             name : 'JS Labs - Website',
             desc : 'Début de site web pour les Laboratoires JS.',
@@ -119,6 +128,22 @@ const projects = {
             link : 'https://github.com/CamilleAbella/LabsAdmin-Dashboard',
             used : ['JS','Express','Bootstrap','PGSQL'],
             preview : ''
+        },
+        {
+            type : 'site',
+            name : 'Note Manager',
+            desc : 'Projet réalisé avec l\'idem dans le cadre de ma formation',
+            link : 'https://github.com/CamilleAbella/note-manager',
+            used : ['JS','Webpack','localStorage'],
+            preview : 'https://raw.githubusercontent.com/CamilleAbella/note-manager/master/src/assets/img/screenshot.png'
+        },
+        {
+            type : 'bot',
+            name : 'Discard',
+            desc : 'Inter-server card game on Discord',
+            link : 'https://github.com/CamilleAbella/Discard',
+            used : ['JS','NodeJS','Canvas','SQLite'],
+            preview : 'https://media.discordapp.net/attachments/669251520138838056/669850258288672768/unknown.png'
         },
         {
             type : 'bot',
@@ -151,6 +176,14 @@ const projects = {
             link : 'https://camilleabella.github.io/TetrisCanvas/',
             used : ['HTML','CSS','JS','Canvas'],
             preview : './img/preview-tetris-canvas.png'
+        },
+        {
+            type : 'lib',
+            name : 'Krosmap',
+            desc : 'Krosmaga game data wrapper',
+            link : 'https://github.com/CamilleAbella/Krosmap',
+            used : ['JS','NodeJS','jsdom','axios'],
+            preview : 'https://camo.githubusercontent.com/ae833fae172c5e8b12994f3a76069e4de46d4f0d/68747470733a2f2f7374617469632e616e6b616d612e636f6d2f672f6d6f64756c65732f6d6173746572706167652f626c6f636b2f6865616465722f6e61766261722f6b726f736d6167612f6c6f676f5f6d642e706e67'
         },
         {
             type : 'lib',
@@ -191,7 +224,8 @@ const projects = {
             link : 'https://github.com/CamilleAbella/HoverTree-CSS-Framework',
             used : ['JS','jQuery'],
             preview : ''
-        }
+        },
+        
     ],
     pro : [
         {
