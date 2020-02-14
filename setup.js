@@ -1,5 +1,5 @@
 
-moment.locale('fr')
+moment.locale('fr-FR')
 window.addEventListener("scroll", preventMotion, false);
 window.addEventListener("touchmove", preventMotion, false);
 
@@ -139,6 +139,14 @@ const projects = {
         },
         {
             type : 'bot',
+            name : 'WakFight',
+            desc : 'Jeu de combat dans l\'univers d\'Ankama (le Krosmoz)',
+            link : 'https://github.com/CamilleAbella/wakfight.ts',
+            used : ['TypeScript','NodeJS','SQLite'],
+            preview : './img/preview-wakfight.png'
+        },,
+        {
+            type : 'bot',
             name : 'Discard',
             desc : 'Inter-server card game on Discord',
             link : 'https://github.com/CamilleAbella/Discard',
@@ -258,9 +266,15 @@ const competences = [
 
     {
         type : 'lang',
-        name : 'Javascript',
+        name : 'JavaScript',
         icon : 'fab fa-js',
         color : '#f7df1e'
+    },
+    {
+        type : 'lang',
+        name : 'TypeScript',
+        icon : 'fab fa-js',
+        color : '#007acc'
     },
     {
         type : 'lang',
