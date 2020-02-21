@@ -328,6 +328,12 @@ const competences = [
     },
     {
         type : 'lib',
+        name : 'React',
+        icon : 'fab fa-react',
+        color : '#00d8ff'
+    },
+    {
+        type : 'lib',
         name : 'Angular',
         icon : 'fab fa-angular',
         color : '#B52E31'
@@ -340,7 +346,7 @@ const competences = [
     },
     {
         type : 'lib',
-        name : 'Express.js',
+        name : 'Express JS',
         icon : 'fab fa-edge',
         color : '#333333'
     },
