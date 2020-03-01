@@ -161,8 +161,6 @@ function init(starting){
             contactLinkIndex = 0
         },5000)
 
-        
-
         // PROJECTS
         for(type in projects){
             const table = $('.projects .' + type)

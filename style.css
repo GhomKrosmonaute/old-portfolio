@@ -400,7 +400,8 @@ section.contact {
 
 /* Footer / Parcours */
 
-section.footer > div {
+section.footer > div,
+section.projects > ul {
     overflow-y: scroll;
     height: 60vh;
 }

@@ -171,6 +171,14 @@ const projects = {
         },
         {
             type : 'game',
+            name : 'Shooter',
+            desc : 'Shooter simple inspiré de The Binding of Isaac.',
+            link : 'https://camilleabella.github.io/ShooterGame/',
+            used : ['HTML','JS','p5.js'],
+            preview : './img/preview-shooter.png'
+        },
+        {
+            type : 'game',
             name : 'Gario',
             desc : 'Platformer avec une physique inspirée de Mario Bros et un gameplay simple.',
             link : 'https://camilleabella.github.io/Gario/',
@@ -179,11 +187,19 @@ const projects = {
         },
         {
             type : 'game',
-            name : 'Tetris en Canvas',
+            name : 'Tetris',
             desc : 'Petit projet en canvas lors de ma formation à l\'Idem.',
             link : 'https://camilleabella.github.io/TetrisCanvas/',
             used : ['HTML','CSS','JS','Canvas'],
             preview : './img/preview-tetris-canvas.png'
+        },
+        {
+            type : 'game',
+            name : 'Snake',
+            desc : 'Projet démonstratif pour le salon du travail.',
+            link : 'https://camilleabella.github.io/SnakeGame/',
+            used : ['HTML','JS','p5.js'],
+            preview : './img/preview-snake.png'
         },
         {
             type : 'lib',
