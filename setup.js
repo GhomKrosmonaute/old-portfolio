@@ -173,7 +173,7 @@ const projects = {
             type : 'game',
             name : 'Shooter',
             desc : 'Shooter simple inspiré de The Binding of Isaac.',
-            link : 'https://camilleabella.github.io/ShooterGame/',
+            link : 'https://camilleabella.github.io/TypedShooterGame/dist/index.html',
             used : ['HTML','JS','p5.js'],
             preview : './img/preview-shooter.png'
         },
