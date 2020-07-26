@@ -20,7 +20,7 @@
     "url": "https://github.com/CamilleAbella/CamilleAbella.github.io/issues"
   },
   "homepage": "https://github.com/CamilleAbella/CamilleAbella.github.io#readme",
-  "dependencies": {
+  "devDependencies": {
     "animejs": "^3.2.0",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^6.0.3",
