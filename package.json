@@ -1,0 +1,43 @@
+{
+  "name": "camilleabella.github.io",
+  "version": "2.0.0",
+  "description": "Webpack version of my portfolio",
+  "main": "dist/index.html",
+  "scripts": {
+    "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --open --watch --content-base src/ --mode development",
+    "git": "git rm -rf dist --ignore-unmatch && yarn build && git add *",
+    "build": "webpack --config webpack.config.js --mode production",
+    "prettier": "prettier --write src/index.* src/styles src/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilleAbella/CamilleAbella.github.io.git"
+  },
+  "author": "ghom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilleAbella/CamilleAbella.github.io/issues"
+  },
+  "homepage": "https://github.com/CamilleAbella/CamilleAbella.github.io#readme",
+  "dependencies": {
+    "animejs": "^3.2.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.0.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.0.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "source-map-loader": "^1.0.1",
+    "style-loader": "^1.2.1",
+    "tslint": "^6.1.2",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
