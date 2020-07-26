@@ -1,0 +1,20 @@
+[
+  {
+    "name" : "LinkedIn",
+    "value" : "Camille Abella",
+    "link" : "https://www.linkedin.com/in/camille-abella-a99950176/",
+    "icon" : "fab fa-linkedin"
+  },
+  {
+    "name" : "Discord",
+    "value" : "Ghom#9700",
+    "link" : "https://discord.gg/3vC2XWK",
+    "icon" : "fab fa-discord"
+  },
+  {
+    "name" : "Twitter",
+    "value" : "@GhomKrosmonaute",
+    "link" : "https://twitter.com/GhomKrosmonaute",
+    "icon" : "fab fa-twitter-square"
+  }
+]

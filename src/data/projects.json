@@ -1,0 +1,289 @@
+{
+  "perso" : [
+    {
+      "type" : "Org",
+      "name" : "Les Laboratoires JS",
+      "desc" : "Projet d'entraide communautaire autour du JavaScript.",
+      "link" : "https://top.gg/servers/507389389098188820",
+      "used" : [
+        "Discord"
+      ],
+      "preview" : "jslabs.gif"
+    },
+    {
+      "type" : "API",
+      "name" : "Statme",
+      "desc" : "Api de statistiques d'activité sur Discord.",
+      "link" : "http://statme-api.tk/",
+      "used" : [
+        "JS",
+        "Discord.js",
+        "Express",
+        "MySQL"
+      ],
+      "preview" : "statme-api.png"
+    },
+    {
+      "type" : "Site",
+      "name" : "JS Labs - Website",
+      "desc" : "Début de site web pour les Laboratoires JS.",
+      "link" : "https://github.com/CamilleAbella/JS-Labs-Website",
+      "used" : [
+        "PHP",
+        "JS",
+        "CSS",
+        "PGSQL"
+      ],
+      "preview" : "labs-website.PNG"
+    },
+    {
+      "type" : "Site",
+      "name" : "JS Labs - Admin",
+      "desc" : "Début d'interface d'administration pour les Laboratoires JS",
+      "link" : "https://github.com/CamilleAbella/LabsAdmin-Dashboard",
+      "used" : [
+        "JS",
+        "Express",
+        "Bootstrap",
+        "PGSQL"
+      ],
+      "preview" : ""
+    },
+    {
+      "type" : "Site",
+      "name" : "Note Manager",
+      "desc" : "Projet réalisé avec l'idem dans le cadre de ma formation",
+      "link" : "https://github.com/CamilleAbella/note-manager",
+      "used" : [
+        "JS",
+        "Webpack",
+        "localStorage"
+      ],
+      "preview" : "note-manager.png"
+    },
+    {
+      "type" : "Bot",
+      "name" : "WakFight",
+      "desc" : "Jeu de combat dans l'univers d'Ankama (le Krosmoz)",
+      "link" : "https://github.com/CamilleAbella/wakfight.ts",
+      "used" : [
+        "TypeScript",
+        "NodeJS",
+        "SQLite"
+      ],
+      "preview" : "wakfight.png"
+    },
+    {
+      "type" : "Bot",
+      "name" : "Discard",
+      "desc" : "Inter-server card game on Discord",
+      "link" : "https://github.com/CamilleAbella/Discard",
+      "used" : [
+        "JS",
+        "NodeJS",
+        "Canvas",
+        "SQLite"
+      ],
+      "preview" : "discard.png"
+    },
+    {
+      "type" : "Bot",
+      "name" : "Unicorn Trap",
+      "desc" : "Gestionnaire de dégradés de couleurs pour les rôles dans Discord.",
+      "link" : "https://discordapp.com/oauth2/authorize?client_id=467702792350597120&permissions=268435456&scope=bot",
+      "used" : [
+        "JS",
+        "NodeJS",
+        "Discord.js",
+        "Color Engine"
+      ],
+      "preview" : "unicorn-trap.PNG"
+    },
+    {
+      "type" : "Bot",
+      "name" : "Discord JS",
+      "desc" : "Lien direct entre la documentation Discord JS et Discord. (DJS API docs wrapper)",
+      "link" : "https://top.gg/bot/554108430298775564",
+      "used" : [
+        "JS",
+        "NodeJS",
+        "Discord.js"
+      ],
+      "preview" : "discord-js.PNG"
+    },
+    {
+      "type" : "Game",
+      "name" : "Shooter",
+      "desc" : "Shooter simple inspiré de The Binding of Isaac.",
+      "link" : "https://camilleabella.github.io/TypedShooterGame/dist/index.html",
+      "used" : [
+        "HTML",
+        "JS",
+        "p5.js"
+      ],
+      "preview" : "shooter.png"
+    },
+    {
+      "type" : "Game",
+      "name" : "Gario",
+      "desc" : "Platformer avec une physique inspirée de Mario Bros et un gameplay simple.",
+      "link" : "https://camilleabella.github.io/Gario/",
+      "used" : [
+        "HTML",
+        "JS",
+        "p5.js"
+      ],
+      "preview" : "gario.png"
+    },
+    {
+      "type" : "Game",
+      "name" : "Tetris",
+      "desc" : "Petit projet en canvas lors de ma formation à l'Idem.",
+      "link" : "https://camilleabella.github.io/TetrisCanvas/",
+      "used" : [
+        "HTML",
+        "CSS",
+        "JS",
+        "Canvas"
+      ],
+      "preview" : "tetris-canvas.png"
+    },
+    {
+      "type" : "Game",
+      "name" : "Snake",
+      "desc" : "Projet démonstratif pour le salon du travail.",
+      "link" : "https://camilleabella.github.io/SnakeGame/",
+      "used" : [
+        "HTML",
+        "JS",
+        "p5.js"
+      ],
+      "preview" : "snake.png"
+    },
+    {
+      "type" : "Lib",
+      "name" : "Krosmap",
+      "desc" : "Krosmaga game data wrapper",
+      "link" : "https://github.com/CamilleAbella/Krosmap",
+      "used" : [
+        "JS",
+        "NodeJS",
+        "jsdom",
+        "axios"
+      ],
+      "preview" : "krosmap.png"
+    },
+    {
+      "type" : "Lib",
+      "name" : "Windows.js",
+      "desc" : "Un gestionnaire de fenêtres à l'intérieur de votre site !",
+      "link" : "https://camilleabella.github.io/Windows.js/",
+      "used" : [
+        "JS",
+        "CSS"
+      ],
+      "preview" : "windows-js.png"
+    },
+    {
+      "type" : "Lib",
+      "name" : "Typing.js",
+      "desc" : "HTML keyboard typing by ID element.",
+      "link" : "https://camilleabella.github.io/Typing.js/",
+      "used" : [
+        "JS"
+      ],
+      "preview" : "typing-js.PNG"
+    },
+    {
+      "type" : "Lib",
+      "name" : "GodEmbed",
+      "desc" : "Langage de construction d'embed Discord, technologie de templating.",
+      "link" : "https://github.com/CamilleAbella/GodEmbed/tree/master/Module",
+      "used" : [
+        "JS",
+        "NodeJS"
+      ],
+      "preview" : ""
+    },
+    {
+      "type" : "Lib",
+      "name" : "Color Engine",
+      "desc" : "Color engine for creates color gradients from a few colors and converts RBG colors to HEX and vice versa.",
+      "link" : "https://github.com/CamilleAbella/Color-Engine",
+      "used" : [
+        "JS",
+        "NodeJS"
+      ],
+      "preview" : ""
+    },
+    {
+      "type" : "Lib",
+      "name" : "HoverTree",
+      "desc" : "CSS framework for fast and easy menus and sub-menus.",
+      "link" : "https://github.com/CamilleAbella/HoverTree-CSS-Framework",
+      "used" : [
+        "JS",
+        "jQuery"
+      ],
+      "preview" : ""
+    }
+  ],
+  "pro" : [
+    {
+      "type" : "App",
+      "name" : "Rednit",
+      "desc" : "Projet ayant gagné la troisième place du <a class=\"text-info\" target=\"_blank\" href=\"http://communities.techstars.com/france/perpignan/startup-weekend/15095\">Startup Weekend Perpignan</a>.",
+      "link" : "#",
+      "used" : [
+        "Python",
+        "JS",
+        "Rasa",
+        "React",
+        "PGSQL"
+      ],
+      "preview" : "rednit.png"
+    },
+    {
+      "type": "Game",
+      "name": "CRISPR-Crunch",
+      "desc": "CRISPR Technology vulgarisation game",
+      "link": "https://playcurious.games/games/crispr-crunch/",
+      "used": ["HTML","CSS","TS","Webpack","Booyah","PixiJS"],
+      "preview": "crispr-crunch.jpg"
+    },
+    {
+      "type": "Lib",
+      "name": "Booyah",
+      "desc": "HTML5 game engine for mobile & desktop",
+      "link": "https://github.com/play-curious/booyah",
+      "used": ["TS","Webpack","PixiJS"],
+      "preview": "booyah.jpg"
+    },
+    {
+      "type" : "Site",
+      "name" : "Ce Portfolio 😉",
+      "desc" : "Mon CV en ligne, vous le lisez actuellement.",
+      "link" : "https://camilleabella.github.io/",
+      "used" : [
+        "HTML",
+        "TS",
+        "SCSS",
+        "Webpack",
+        "Anime.js"
+      ],
+      "preview" : ""
+    },
+    {
+      "type" : "Site",
+      "name" : "Fake Toys'R'Us",
+      "desc" : "Projet PHP lors de ma formation WEB à l'Idem.",
+      "link" : "https://github.com/CamilleAbella/ERN-WEB-project-1",
+      "used" : [
+        "PHP",
+        "CSS",
+        "MySQL"
+      ],
+      "preview" : "toys-r-us.png"
+    }
+  ]
+}
