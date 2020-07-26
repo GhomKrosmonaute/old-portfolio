@@ -6,8 +6,10 @@ const SRC = path.resolve( __dirname, 'src' );
 const DIST = path.resolve( __dirname, 'dist' );
 
 module.exports = {
+  context: SRC,
+  
   entry: {
-    'main': 'src/index.ts'
+    'main': 'index.ts'
   },
   
   output: {
@@ -17,22 +19,20 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
-      favicon: "src/favicon.png"
+      template: "index.html",
+      favicon: "favicon.png"
     }),
     new CopyWebpackPlugin({
       patterns: [{
-        from: 'src/images/**/*', to: "dist/images"
+        from: path.resolve( SRC, "images" ),
+        to: path.resolve( DIST, "images" )
       }]
     })
   ],
   
   resolve: {
     extensions: ['.ts', '.js'],
-    modules: [
-      SRC,
-      'node_modules'
-    ]
+    modules: ['node_modules']
   },
   
   module: {
@@ -43,6 +43,7 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.js$/,
+        exclude: /node_modules/,
         use: 'source-map-loader'
       },
       {
@@ -57,19 +58,22 @@ module.exports = {
        *****************/
       {
         test: /\.ts$/i,
-        exclude: [ /node_modules/ ],
+        exclude: /node_modules/,
         use: 'awesome-typescript-loader'
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: ['style-loader','css-loader','sass-loader'],
       },
       {
         test: /\.(?:png|svg|jpg|ttf|gif)$/i,
+        exclude: /node_modules/,
         use: 'file-loader'
       },
       {
         test: /\.html$/i,
+        exclude: /node_modules/,
         use: 'html-loader'
       }
     ]
