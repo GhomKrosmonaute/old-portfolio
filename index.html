@@ -1,135 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="user-scalable=no"/>
-    <title> Ghom - Développeur WEB </title>
-
-    <meta property="og:title" content="Camille ABELLA | Portfolio"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="Ghom - Développeur WEB" />
-    <meta property="og:description" content="Mon modeste portfolio, réalisé à l'aide d'Anime.js !"/>
-    <meta property="og:url" content="https://camilleabella.github.io/"/>
-
-    <meta property="og:image" content="https://camilleabella.github.io/img/avatar.png"/>
-    <meta property="og:image:width" content="300"/>
-    <meta property="og:image:height" content="300"/>
-    <meta property="og:image" content="https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/meta.png"/>
-
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Mono&display=swap"> 
-    <link rel="stylesheet" href="libs/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/fontawesome.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="user-scalable=no" />
+  <meta property="og:title" content="Camille ABELLA | Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ghom - Développeur WEB" />
+  <meta
+    property="og:description"
+    content="Portfolio utilisant la technologie Webpack et Anime.js"
+  />
+  <meta property="og:url" content="https://camilleabella.github.io/" />
+  <meta
+    property="og:image"
+    content="https://camilleabella.github.io/img/avatar.png"
+  />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/CamilleAbella/CamilleAbella.github.io/master/img/meta.png"
+  />
+  <title>Ghom - Développeur WEB</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
-
 <body>
-    <div class="popup"></div>
-    <div class="light blue"></div>
-    <div class="light purple"></div>
-
-    <div class="loader-top"></div>
-    <div class="loader-bottom"></div>
-    <div class="loader">
-        <div></div>
-    </div>
-    <div class="loader-text numeric">0%</div>
-
-    <button class="shadow"><i class="fas fa-times"></i></button>
-    <span class="hand"><i class="fas fa-hand-point-down"></i></span>
-
-    <div class="header shadow"></div>
-    <section class="header"> 
-        <h1> <span class="icon"> <i class="fas fa-terminal"></i> </span> Développeur WEB </h1>
-    </section>
-
-    <div class="infos shadow">
-        <img class="shadow avatar" src="img/avatar.png" alt="Mon avatar">
-        <img class="shadow photo" src="img/photo.jpg" alt="Ma photo">
-    </div>
-    <section class="infos font-weight-light">
-        <span class=""> ABELLA Camille, <span class="age"></span> ans </span> <br>
-        <span class=""> Habite en Occitanie (66) </span> <br>
-        <span class=""> Développeur WEB </span>
-        <p class="bio">
-            <span class="title"> Bio : </span> <br>
-                Depuis tout petit, c'est la création qui me passionna le plus, l'Art de la création.
-                Le dessin, la musique et la conception de petits jeux furent mon quotidien étant enfant.
-                J'eut toujours été passionné par les ordinateurs et ce fût assez tôt que je me mis au développement en JavaScript.
-        </p>
-    </section>
-    
-    <div class="contact shadow"></div>
-    <section class="contact">
-        <table>
-            <tr>
-                <td class="icon"> <i class="fas fa-mobile-alt"></i> </td>
-                <td class="info numeric"> 06 71 31 13 56 </td>
-            </tr>
-            <tr>
-                <td class="icon"> <i class="fas fa-at"></i> </td>
-                <td class="info"> camille.abella@hotmail.fr </td>
-            </tr>
-            <tr>
-                <td class="icon"> <i class="fas fa-map-marker-alt"></i> </td>
-                <td class="info"> 9 HLM Camp del roc <br> Vinça - <span class="numeric"> 66320 </span></td>
-            </tr>
-        </table>
-        <table class="hidden">
-            <tr>
-                <td class="icon"> <i class="fab fa-discord"></i> </td>
-                <td class="info"> Ghom#<span class="numeric">9700 </span> </td>
-            </tr>
-            <tr>
-                <td class="icon"> <i class="fab fa-twitter"></i> </td>
-                <td class="info"> <a href="https://twitter.com/GhomKrosmonaute" target="_blank"> GhomKrosmonaute </a> </td>
-            </tr>
-            <tr>
-                <td class="icon"> <i class="fab fa-linkedin-in"></i> </td>
-                <td class="info"> <a href="https://www.linkedin.com/in/camille-abella-a99950176/" target="_blank"> Camille Abella </a> </td>
-            </tr>
-        </table>
-        <div class="icons"></div>
-    </section>
-
-    <div class="to-bottom projects"></div>
-    <section class="to-bottom projects"> 
-        <h2> Projets </h2> <hr>
-        <ul>
-            <li> 
-                <h3> Professionnels </h3>
-                <table class="pro"></table>
-            </li> <hr>
-            <li> 
-                <h3> Personnels </h3>
-                <table class="perso"></table>  
-            </li>
-        </ul>
-    </section>
-
-    <div class="to-bottom skills"></div>
-    <section class="to-bottom skills"> 
-        <h2> Compétences </h2> <hr>
-        <table></table>
-    </section>
-
-    <div class="to-bottom footer"></div>
-    <section class="to-bottom footer"> 
-        <h2> Parcours </h2> <hr>
-        <div></div>
-    </section>
-
-    <ol class="indexes"></ol>
-    <ol class="side-code"></ol>
-
-    <script src="libs/moment-with-locales.js"></script>
-    <script src="libs/fontawesome.js"></script>
-    <script src="libs/jquery-3.4.1.min.js"></script>
-    <script src="libs/bootstrap.bundle.min.js"></script>
-    <script src="libs/anime.js"></script>
-    <script src="setup.js"></script>
-    <script src="script.js"></script>
+  <div style="display: grid; place-items: center; height: 100vh">
+    <a href="https://CamilleAbella.github.io"> Clique ici pour accéder à mon portfolio </a>
+  </div>
 </body>
 </html>
