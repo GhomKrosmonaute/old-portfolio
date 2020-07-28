@@ -5,7 +5,7 @@
   "main": "dist/index.html",
   "scripts": {
     "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --open --watch --content-base src/ --mode development",
-    "git": "git rm -rf dist --ignore-unmatch && yarn build && git add *",
+    "git": "git rm -rf dist --ignore-unmatch && yarn prettier && yarn build && git add *",
     "build": "webpack --config webpack.config.js --mode production",
     "prettier": "prettier --write webpack.config.js src/index.* src/styles src/data src/app",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/CamilleAbella/CamilleAbella.github.io#readme",
   "devDependencies": {
+    "@types/animejs": "^3.1.1",
     "animejs": "^3.2.0",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^6.0.3",

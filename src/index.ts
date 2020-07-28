@@ -1,3 +1,4 @@
 import "./index.scss";
+import App from "./app/App";
 
-console.log("wow");
+new App();
